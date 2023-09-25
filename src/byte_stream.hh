@@ -1,10 +1,12 @@
 #pragma once
 
 #include <queue>
+#include <deque>
 #include <stdexcept>
 #include <string>
 #include <string_view>
 #include "buffer.hh"
+#include <iostream>
 
 class Reader;
 class Writer;
@@ -15,7 +17,7 @@ protected:
   uint64_t capacity_;
   // Please add any additional state to the ByteStream here, and not to the Writer and Reader interfaces.
   size_t current_size_;
-  std::queue<Buffer> q_;
+  std::deque<Buffer> q_;
   bool b_closed_;
   bool b_error_;
   size_t bytes_pushed_;
@@ -29,6 +31,21 @@ public:
   const Reader& reader() const;
   Writer& writer();
   const Writer& writer() const;
+
+  void print_bytestream() const {
+      std::cout << "Capacity: " << capacity_ << "\n"
+                << "Current Size: " << current_size_ << "\n"
+                << "Is Closed: " << b_closed_ << "\n"
+                << "Error Set?: " << b_error_ << "\n"
+                << "Bytes Pushed: " << bytes_pushed_ << "\n"
+                << "Bytes Popped: " << bytes_popped_ << "\n";
+
+      std::cout << "Buffer:  " << "\n";
+      for(const Buffer& buffer : q_) {
+          std::cout << static_cast<std::string >(buffer) << "\n";
+      }
+      std::cout << std::endl;
+  }
 };
 
 class Writer : public ByteStream

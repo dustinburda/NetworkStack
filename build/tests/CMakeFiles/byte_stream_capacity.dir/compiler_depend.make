@@ -163,17 +163,7 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/12/bits/charconv.h \
   /usr/include/c++/12/bits/basic_string.tcc \
-  /media/sf_minnow/tests/byte_stream_test_harness.hh \
-  /media/sf_minnow/tests/common.hh \
-  /media/sf_minnow/tests/conversions.hh \
-  /media/sf_minnow/src/wrapping_integers.hh \
-  /usr/include/c++/12/optional \
-  /usr/include/c++/12/bits/enable_special_members.h \
-  /usr/include/c++/12/utility \
-  /usr/include/c++/12/bits/stl_relops.h \
-  /media/sf_minnow/util/exception.hh \
-  /usr/include/c++/12/cxxabi.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/cxxabi_tweaks.h \
+  /media/sf_minnow/util/buffer.hh \
   /usr/include/c++/12/memory \
   /usr/include/c++/12/bits/stl_tempbuf.h \
   /usr/include/c++/12/bits/stl_raw_storage_iter.h \
@@ -260,10 +250,25 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
   /usr/include/c++/12/pstl/execution_defs.h \
   /usr/include/c++/12/iostream \
   /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc
+  /usr/include/c++/12/bits/istream.tcc \
+  /media/sf_minnow/tests/byte_stream_test_harness.hh \
+  /media/sf_minnow/tests/common.hh \
+  /media/sf_minnow/tests/conversions.hh \
+  /media/sf_minnow/src/wrapping_integers.hh \
+  /usr/include/c++/12/optional \
+  /usr/include/c++/12/bits/enable_special_members.h \
+  /usr/include/c++/12/utility \
+  /usr/include/c++/12/bits/stl_relops.h \
+  /media/sf_minnow/util/exception.hh \
+  /usr/include/c++/12/cxxabi.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/cxxabi_tweaks.h
 
 
-/usr/include/c++/12/istream:
+/usr/include/c++/12/cxxabi.h:
+
+/media/sf_minnow/util/exception.hh:
+
+/usr/include/c++/12/bits/stl_relops.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
@@ -276,6 +281,8 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
 /usr/include/c++/12/cctype:
 
 /usr/include/c++/12/stdexcept:
+
+/usr/include/c++/12/istream:
 
 /usr/include/c++/12/bits/basic_string.h:
 
@@ -318,8 +325,6 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
 /usr/include/c++/12/bits/atomic_wait.h:
 
 /usr/include/c++/12/cstdint:
-
-/usr/include/c++/12/bits/stl_relops.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
 
@@ -435,8 +440,6 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
 
 /usr/include/c++/12/bits/ptr_traits.h:
 
-/media/sf_minnow/tests/common.hh:
-
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/c++/12/bits/stl_iterator.h:
@@ -482,6 +485,10 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
 /usr/include/c++/12/numbers:
 
 /usr/include/c++/12/bits/ranges_cmp.h:
+
+/media/sf_minnow/tests/common.hh:
+
+/media/sf_minnow/util/buffer.hh:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
@@ -647,20 +654,6 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
 
 /usr/include/c++/12/bits/basic_string.tcc:
 
-/usr/include/c++/12/bits/cxxabi_init_exception.h:
-
-/media/sf_minnow/tests/byte_stream_test_harness.hh:
-
-/usr/include/c++/12/bits/shared_ptr_base.h:
-
-/media/sf_minnow/tests/conversions.hh:
-
-/usr/include/c++/12/bits/enable_special_members.h:
-
-/media/sf_minnow/util/exception.hh:
-
-/usr/include/c++/12/cxxabi.h:
-
 /usr/include/linux/close_range.h:
 
 /usr/include/c++/12/bits/stl_tempbuf.h:
@@ -713,9 +706,9 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
-/usr/include/c++/12/iostream:
-
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/c++/12/iostream:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
@@ -751,6 +744,12 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
 
 /usr/include/c++/12/bits/basic_ios.tcc:
 
+/usr/include/c++/12/bits/shared_ptr_base.h:
+
+/usr/include/c++/12/bits/cxxabi_init_exception.h:
+
+/media/sf_minnow/tests/byte_stream_test_harness.hh:
+
 /usr/include/c++/12/bits/nested_exception.h:
 
 /usr/include/c++/12/bits/allocated_ptr.h:
@@ -782,3 +781,7 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: /media/sf_m
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
 
 /usr/include/c++/12/bits/std_mutex.h:
+
+/media/sf_minnow/tests/conversions.hh:
+
+/usr/include/c++/12/bits/enable_special_members.h:

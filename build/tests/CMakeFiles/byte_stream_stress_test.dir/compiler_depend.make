@@ -164,16 +164,7 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/12/bits/charconv.h \
   /usr/include/c++/12/bits/basic_string.tcc \
-  /media/sf_minnow/tests/common.hh \
-  /media/sf_minnow/tests/conversions.hh \
-  /media/sf_minnow/src/wrapping_integers.hh \
-  /usr/include/c++/12/optional \
-  /usr/include/c++/12/bits/enable_special_members.h \
-  /usr/include/c++/12/utility \
-  /usr/include/c++/12/bits/stl_relops.h \
-  /media/sf_minnow/util/exception.hh \
-  /usr/include/c++/12/cxxabi.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/cxxabi_tweaks.h \
+  /media/sf_minnow/util/buffer.hh \
   /usr/include/c++/12/memory \
   /usr/include/c++/12/bits/stl_tempbuf.h \
   /usr/include/c++/12/bits/stl_raw_storage_iter.h \
@@ -261,6 +252,16 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
   /usr/include/c++/12/iostream \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
+  /media/sf_minnow/tests/common.hh \
+  /media/sf_minnow/tests/conversions.hh \
+  /media/sf_minnow/src/wrapping_integers.hh \
+  /usr/include/c++/12/optional \
+  /usr/include/c++/12/bits/enable_special_members.h \
+  /usr/include/c++/12/utility \
+  /usr/include/c++/12/bits/stl_relops.h \
+  /media/sf_minnow/util/exception.hh \
+  /usr/include/c++/12/cxxabi.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/cxxabi_tweaks.h \
   /usr/include/c++/12/random \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
@@ -342,7 +343,11 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
-/usr/include/c++/12/istream:
+/usr/include/c++/12/cxxabi.h:
+
+/media/sf_minnow/util/exception.hh:
+
+/usr/include/c++/12/bits/stl_relops.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
@@ -355,6 +360,8 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
 /usr/include/c++/12/cctype:
 
 /usr/include/c++/12/stdexcept:
+
+/usr/include/c++/12/istream:
 
 /usr/include/c++/12/bits/basic_string.h:
 
@@ -397,8 +404,6 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
 /usr/include/c++/12/bits/atomic_wait.h:
 
 /usr/include/c++/12/cstdint:
-
-/usr/include/c++/12/bits/stl_relops.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
 
@@ -550,8 +555,6 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
 
 /usr/include/c++/12/bits/ptr_traits.h:
 
-/media/sf_minnow/tests/common.hh:
-
 /usr/include/c++/12/bits/cxxabi_forced.h:
 
 /usr/include/c++/12/bits/stl_iterator_base_types.h:
@@ -577,6 +580,10 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
 /usr/include/c++/12/numbers:
 
 /usr/include/c++/12/bits/ranges_cmp.h:
+
+/media/sf_minnow/tests/common.hh:
+
+/media/sf_minnow/util/buffer.hh:
 
 /usr/include/c++/12/bits/random.h:
 
@@ -744,14 +751,6 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
 
 /usr/include/c++/12/bits/basic_string.tcc:
 
-/media/sf_minnow/tests/conversions.hh:
-
-/usr/include/c++/12/bits/enable_special_members.h:
-
-/media/sf_minnow/util/exception.hh:
-
-/usr/include/c++/12/cxxabi.h:
-
 /usr/include/linux/close_range.h:
 
 /usr/include/c++/12/bits/stl_tempbuf.h:
@@ -810,9 +809,9 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/c++/12/iostream:
-
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/c++/12/iostream:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
@@ -881,3 +880,7 @@ tests/CMakeFiles/byte_stream_stress_test.dir/byte_stream_stress_test.cc.o: /medi
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
 
 /usr/include/c++/12/bits/std_mutex.h:
+
+/media/sf_minnow/tests/conversions.hh:
+
+/usr/include/c++/12/bits/enable_special_members.h:

@@ -236,12 +236,12 @@ apps/CMakeFiles/stream_copy.dir/bidirectional_stream_copy.cc.o: \
  /media/sf_minnow/src/byte_stream.hh /usr/include/c++/12/queue \
  /usr/include/c++/12/deque /usr/include/c++/12/bits/stl_deque.h \
  /usr/include/c++/12/bits/deque.tcc /usr/include/c++/12/bits/stl_queue.h \
- /media/sf_minnow/util/eventloop.hh /usr/include/c++/12/list \
- /usr/include/c++/12/bits/stl_list.h /usr/include/c++/12/bits/list.tcc \
- /usr/include/poll.h /usr/include/x86_64-linux-gnu/sys/poll.h \
+ /usr/include/c++/12/iostream /usr/include/c++/12/istream \
+ /usr/include/c++/12/bits/istream.tcc /media/sf_minnow/util/eventloop.hh \
+ /usr/include/c++/12/list /usr/include/c++/12/bits/stl_list.h \
+ /usr/include/c++/12/bits/list.tcc /usr/include/poll.h \
+ /usr/include/x86_64-linux-gnu/sys/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll.h /usr/include/c++/12/algorithm \
  /usr/include/c++/12/bits/ranges_algo.h \
  /usr/include/c++/12/bits/ranges_util.h \
- /usr/include/c++/12/pstl/glue_algorithm_defs.h \
- /usr/include/c++/12/iostream /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc
+ /usr/include/c++/12/pstl/glue_algorithm_defs.h

@@ -131,14 +131,8 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/12/bits/charconv.h \
  /usr/include/c++/12/bits/basic_string.tcc \
- /media/sf_minnow/tests/byte_stream_test_harness.hh \
- /media/sf_minnow/tests/common.hh /media/sf_minnow/tests/conversions.hh \
- /media/sf_minnow/src/wrapping_integers.hh /usr/include/c++/12/optional \
- /usr/include/c++/12/bits/enable_special_members.h \
- /usr/include/c++/12/utility /usr/include/c++/12/bits/stl_relops.h \
- /media/sf_minnow/util/exception.hh /usr/include/c++/12/cxxabi.h \
- /usr/include/x86_64-linux-gnu/c++/12/bits/cxxabi_tweaks.h \
- /usr/include/c++/12/memory /usr/include/c++/12/bits/stl_tempbuf.h \
+ /media/sf_minnow/util/buffer.hh /usr/include/c++/12/memory \
+ /usr/include/c++/12/bits/stl_tempbuf.h \
  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
  /usr/include/c++/12/bits/align.h /usr/include/c++/12/bit \
  /usr/include/c++/12/bits/unique_ptr.h /usr/include/c++/12/tuple \
@@ -208,4 +202,11 @@ tests/CMakeFiles/byte_stream_capacity.dir/byte_stream_capacity.cc.o: \
  /usr/include/c++/12/bits/uses_allocator_args.h \
  /usr/include/c++/12/pstl/glue_memory_defs.h \
  /usr/include/c++/12/pstl/execution_defs.h /usr/include/c++/12/iostream \
- /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc
+ /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc \
+ /media/sf_minnow/tests/byte_stream_test_harness.hh \
+ /media/sf_minnow/tests/common.hh /media/sf_minnow/tests/conversions.hh \
+ /media/sf_minnow/src/wrapping_integers.hh /usr/include/c++/12/optional \
+ /usr/include/c++/12/bits/enable_special_members.h \
+ /usr/include/c++/12/utility /usr/include/c++/12/bits/stl_relops.h \
+ /media/sf_minnow/util/exception.hh /usr/include/c++/12/cxxabi.h \
+ /usr/include/x86_64-linux-gnu/c++/12/bits/cxxabi_tweaks.h

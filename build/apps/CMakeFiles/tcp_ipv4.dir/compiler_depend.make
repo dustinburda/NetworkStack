@@ -297,6 +297,9 @@ apps/CMakeFiles/tcp_ipv4.dir/tcp_ipv4.cc.o: /media/sf_minnow/apps/tcp_ipv4.cc \
   /usr/include/c++/12/bits/stl_deque.h \
   /usr/include/c++/12/bits/deque.tcc \
   /usr/include/c++/12/bits/stl_queue.h \
+  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/istream \
+  /usr/include/c++/12/bits/istream.tcc \
   /media/sf_minnow/util/eventloop.hh \
   /usr/include/c++/12/list \
   /usr/include/c++/12/bits/stl_list.h \
@@ -321,9 +324,6 @@ apps/CMakeFiles/tcp_ipv4.dir/tcp_ipv4.cc.o: /media/sf_minnow/apps/tcp_ipv4.cc \
   /usr/include/c++/12/span \
   /media/sf_minnow/util/ipv4_datagram.hh \
   /media/sf_minnow/util/ipv4_header.hh \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc \
   /media/sf_minnow/util/tcp_peer.hh \
   /media/sf_minnow/src/tcp_receiver.hh \
   /media/sf_minnow/src/reassembler.hh \
@@ -449,8 +449,6 @@ apps/CMakeFiles/tcp_ipv4.dir/tcp_ipv4.cc.o: /media/sf_minnow/apps/tcp_ipv4.cc \
 
 /media/sf_minnow/util/tcp_peer.hh:
 
-/usr/include/c++/12/istream:
-
 /media/sf_minnow/util/ipv4_header.hh:
 
 /media/sf_minnow/util/ipv4_datagram.hh:
@@ -494,6 +492,8 @@ apps/CMakeFiles/tcp_ipv4.dir/tcp_ipv4.cc.o: /media/sf_minnow/apps/tcp_ipv4.cc \
 /usr/include/c++/12/list:
 
 /media/sf_minnow/util/eventloop.hh:
+
+/usr/include/c++/12/istream:
 
 /usr/include/c++/12/bits/deque.tcc:
 

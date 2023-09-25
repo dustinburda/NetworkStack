@@ -131,10 +131,6 @@ src/CMakeFiles/minnow_sanitized.dir/tcp_sender.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/12/bits/charconv.h \
  /usr/include/c++/12/bits/basic_string.tcc \
- /media/sf_minnow/util/tcp_receiver_message.hh \
- /media/sf_minnow/src/wrapping_integers.hh /usr/include/c++/12/optional \
- /usr/include/c++/12/bits/enable_special_members.h \
- /media/sf_minnow/util/tcp_sender_message.hh \
  /media/sf_minnow/util/buffer.hh /usr/include/c++/12/memory \
  /usr/include/c++/12/bits/stl_tempbuf.h \
  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
@@ -205,7 +201,12 @@ src/CMakeFiles/minnow_sanitized.dir/tcp_sender.cc.o: \
  /usr/include/c++/12/bits/ranges_algobase.h \
  /usr/include/c++/12/bits/uses_allocator_args.h \
  /usr/include/c++/12/pstl/glue_memory_defs.h \
- /usr/include/c++/12/pstl/execution_defs.h \
+ /usr/include/c++/12/pstl/execution_defs.h /usr/include/c++/12/iostream \
+ /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc \
+ /media/sf_minnow/util/tcp_receiver_message.hh \
+ /media/sf_minnow/src/wrapping_integers.hh /usr/include/c++/12/optional \
+ /usr/include/c++/12/bits/enable_special_members.h \
+ /media/sf_minnow/util/tcp_sender_message.hh \
  /media/sf_minnow/util/tcp_config.hh /media/sf_minnow/util/address.hh \
  /usr/include/c++/12/cstddef /usr/include/netdb.h \
  /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \
