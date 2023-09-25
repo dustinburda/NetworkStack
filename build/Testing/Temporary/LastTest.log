@@ -1,0 +1,147 @@
+Start testing: Sep 25 00:37 UTC
+----------------------------------------------------------
+1/39 Testing: compile with bug-checkers
+1/39 Test: compile with bug-checkers
+Command: "/usr/bin/cmake" "--build" "/media/sf_minnow/build" "-t" "functionality_testing" "webget"
+Directory: /media/sf_minnow/build
+"compile with bug-checkers" start time: Sep 25 00:37 UTC
+Output:
+----------------------------------------------------------
+make[4]: warning: -j4 forced in submake: resetting jobserver mode.
+[  1%] Built target minnow_testing_sanitized
+[  2%] Built target minnow_testing_debug
+[  7%] Built target minnow_debug
+[ 14%] Built target util_debug
+[ 19%] Built target minnow_sanitized
+[ 26%] Built target util_sanitized
+[ 26%] Built target byte_stream_basics
+[ 27%] Built target router
+[ 28%] Built target byte_stream_capacity
+[ 30%] Built target byte_stream_one_write
+[ 31%] Built target byte_stream_two_writes
+[ 32%] Built target byte_stream_two_writes_sanitized
+[ 33%] Built target byte_stream_many_writes_sanitized
+[ 34%] Built target byte_stream_stress_test_sanitized
+[ 36%] Built target byte_stream_many_writes
+[ 37%] Built target byte_stream_stress_test
+[ 38%] Built target reassembler_single_sanitized
+[ 38%] Built target reassembler_single
+[ 38%] Built target reassembler_cap_sanitized
+[ 39%] Built target reassembler_cap
+[ 40%] Built target reassembler_seq_sanitized
+[ 42%] Built target reassembler_seq
+[ 43%] Built target reassembler_dup_sanitized
+[ 44%] Built target reassembler_dup
+[ 45%] Built target reassembler_holes_sanitized
+[ 46%] Built target reassembler_holes
+[ 48%] Built target reassembler_overlapping_sanitized
+[ 49%] Built target reassembler_overlapping
+[ 50%] Built target reassembler_win_sanitized
+[ 50%] Built target wrapping_integers_cmp_sanitized
+[ 51%] Built target reassembler_win
+[ 53%] Built target wrapping_integers_cmp
+[ 54%] Built target wrapping_integers_wrap_sanitized
+[ 55%] Built target wrapping_integers_wrap
+[ 56%] Built target wrapping_integers_unwrap_sanitized
+[ 57%] Built target wrapping_integers_unwrap
+[ 59%] Built target wrapping_integers_roundtrip_sanitized
+[ 60%] Built target wrapping_integers_roundtrip
+[ 61%] Built target wrapping_integers_extra_sanitized
+[ 62%] Built target wrapping_integers_extra
+[ 63%] Built target recv_connect_sanitized
+[ 65%] Built target recv_connect
+[ 66%] Built target recv_transmit_sanitized
+[ 66%] Built target recv_window
+[ 67%] Built target recv_transmit
+[ 69%] Built target recv_reorder_sanitized
+[ 69%] Built target recv_window_sanitized
+[ 71%] Built target recv_reorder
+[ 71%] Built target recv_reorder_more_sanitized
+[ 73%] Built target recv_close_sanitized
+[ 73%] Built target recv_reorder_more
+[ 74%] Built target recv_special_sanitized
+[ 75%] Built target recv_close
+[ 77%] Built target recv_special
+[ 77%] Built target send_connect_sanitized
+[ 78%] Built target send_connect
+[ 79%] Built target send_transmit_sanitized
+[ 80%] Built target send_transmit
+[ 81%] Built target send_retx_sanitized
+[ 83%] Built target send_retx
+[ 84%] Built target send_window_sanitized
+[ 86%] Built target send_window
+[ 86%] Built target send_ack_sanitized
+[ 87%] Built target send_ack
+[ 89%] Built target send_close_sanitized
+[ 90%] Built target send_close
+[ 91%] Built target send_extra_sanitized
+[ 92%] Built target send_extra
+[ 93%] Built target net_interface_sanitized
+[ 95%] Built target router_sanitized
+[ 96%] Built target net_interface
+[ 98%] Built target byte_stream_capacity_sanitized
+[ 98%] Built target byte_stream_basics_sanitized
+[100%] Built target byte_stream_one_write_sanitized
+[100%] Built target functionality_testing
+[  0%] Built target stream_copy
+[ 36%] Built target minnow_debug
+[ 90%] Built target util_debug
+[ 90%] [32mBuilding CXX object apps/CMakeFiles/webget.dir/webget.cc.o[0m
+[100%] [32m[1mLinking CXX executable webget[0m
+[100%] Built target webget
+<end of output>
+Test time =   8.04 sec
+----------------------------------------------------------
+Test Passed.
+"compile with bug-checkers" end time: Sep 25 00:37 UTC
+"compile with bug-checkers" time elapsed: 00:00:08
+----------------------------------------------------------
+
+2/39 Testing: t_webget
+2/39 Test: t_webget
+Command: "/media/sf_minnow/tests/webget_t.sh" "/media/sf_minnow/build"
+Directory: /media/sf_minnow/build
+"t_webget" start time: Sep 25 00:37 UTC
+Output:
+----------------------------------------------------------
+HTTP/1.1 200 OK
+Content-type: text/plain
+
+7SmXqWkrLKzVBCEalbSPqBcvs11Pw263K7x4Wv3JckI
+<end of output>
+Test time =   0.82 sec
+----------------------------------------------------------
+Test Passed.
+"t_webget" end time: Sep 25 00:37 UTC
+"t_webget" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/39 Testing: byte_stream_basics
+3/39 Test: byte_stream_basics
+Command: "/media/sf_minnow/build/tests/byte_stream_basics_sanitized"
+Directory: /media/sf_minnow/build
+"byte_stream_basics" start time: Sep 25 00:37 UTC
+Output:
+----------------------------------------------------------
+
+The test [1;39m"[m[1;39mconstruction[m[1;39m"[m failed after these steps:
+
+  0.	[1;39mInitialized ByteStream with capacity=15[m
+  1.	[1;32mExpectation: is_closed = false[m
+  2.	[1;32mExpectation: is_finished = false[m
+  3.	[1;32mExpectation: has_error = false[m
+  4.	[1;32mExpectation: bytes_buffered = 0[m
+[1;31m  ***** Unsuccessful Expectation: available_capacity = 15 *****
+
+[m[1;31mExpectationViolation[m: [1;39mThe object should have had available_capacity = 15, but instead it was 0.[m
+
+Exception: The test "construction" failed.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"byte_stream_basics" end time: Sep 25 00:37 UTC
+"byte_stream_basics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 25 00:37 UTC

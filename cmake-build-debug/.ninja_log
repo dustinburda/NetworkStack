@@ -1,0 +1,4 @@
+# ninja log v5
+6	2681	1695595282635318077	util/CMakeFiles/util_debug.dir/file_descriptor.cc.o	9a621554d1478d74
+23	4655	1695610410166236781	util/CMakeFiles/util_debug.dir/random.cc.o	e2af330a1eb3ed5a
+15	5372	1695610410881448567	util/CMakeFiles/util_debug.dir/file_descriptor.cc.o	9a621554d1478d74
