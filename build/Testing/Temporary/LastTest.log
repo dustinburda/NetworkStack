@@ -1,105 +1,208 @@
-Start testing: Sep 25 18:53 UTC
+Start testing: Sep 27 03:20 UTC
 ----------------------------------------------------------
 1/39 Testing: compile with bug-checkers
 1/39 Test: compile with bug-checkers
 Command: "/usr/bin/cmake" "--build" "/media/sf_minnow/build" "-t" "functionality_testing" "webget"
 Directory: /media/sf_minnow/build
-"compile with bug-checkers" start time: Sep 25 18:53 UTC
+"compile with bug-checkers" start time: Sep 27 03:20 UTC
 Output:
 ----------------------------------------------------------
 make[4]: warning: -j4 forced in submake: resetting jobserver mode.
-[  1%] Built target minnow_testing_debug
-[  2%] Built target minnow_testing_sanitized
-[ 10%] Built target minnow_debug
-[ 14%] Built target util_debug
-[ 19%] Built target minnow_sanitized
-[ 26%] Built target util_sanitized
-[ 26%] Built target byte_stream_basics
-[ 27%] Built target router
-[ 28%] Built target byte_stream_capacity
-[ 30%] Built target byte_stream_one_write
-[ 31%] Built target byte_stream_two_writes_sanitized
-[ 32%] Built target byte_stream_two_writes
-[ 33%] Built target byte_stream_many_writes_sanitized
-[ 36%] Built target byte_stream_many_writes
-[ 36%] Built target byte_stream_stress_test_sanitized
-[ 37%] Built target byte_stream_stress_test
-[ 38%] Built target reassembler_single_sanitized
-[ 38%] Built target reassembler_cap_sanitized
-[ 38%] Built target reassembler_single
-[ 39%] Built target reassembler_seq_sanitized
-[ 40%] Built target reassembler_cap
-[ 42%] Built target reassembler_seq
-[ 43%] Built target reassembler_dup_sanitized
-[ 44%] Built target reassembler_holes_sanitized
-[ 45%] Built target reassembler_dup
-[ 46%] Built target reassembler_holes
-[ 48%] Built target reassembler_overlapping_sanitized
-[ 49%] Built target reassembler_overlapping
-[ 50%] Built target reassembler_win_sanitized
-[ 51%] Built target reassembler_win
-[ 51%] Built target wrapping_integers_cmp_sanitized
-[ 53%] Built target wrapping_integers_cmp
-[ 54%] Built target wrapping_integers_wrap_sanitized
-[ 55%] Built target wrapping_integers_unwrap_sanitized
-[ 56%] Built target wrapping_integers_wrap
-[ 59%] Built target wrapping_integers_unwrap
-[ 59%] Built target wrapping_integers_roundtrip_sanitized
-[ 60%] Built target wrapping_integers_roundtrip
-[ 61%] Built target wrapping_integers_extra_sanitized
-[ 62%] Built target wrapping_integers_extra
-[ 63%] Built target recv_connect_sanitized
-[ 65%] Built target recv_connect
-[ 66%] Built target recv_transmit_sanitized
-[ 67%] Built target recv_transmit
-[ 68%] Built target recv_window_sanitized
-[ 68%] Built target recv_window
-[ 69%] Built target recv_reorder_sanitized
-[ 69%] Built target recv_reorder
-[ 71%] Built target recv_reorder_more_sanitized
-[ 72%] Built target recv_reorder_more
-[ 73%] Built target recv_close_sanitized
-[ 74%] Built target recv_close
-[ 75%] Built target recv_special_sanitized
-[ 77%] Built target recv_special
-[ 77%] Built target send_connect_sanitized
-[ 78%] Built target send_connect
-[ 79%] Built target send_transmit_sanitized
-[ 80%] Built target send_transmit
-[ 81%] Built target send_retx_sanitized
-[ 83%] Built target send_retx
-[ 84%] Built target send_window_sanitized
-[ 85%] Built target send_window
-[ 86%] Built target send_ack
-[ 87%] Built target send_ack_sanitized
-[ 89%] Built target send_close_sanitized
-[ 90%] Built target send_close
-[ 92%] Built target send_extra
-[ 92%] Built target send_extra_sanitized
-[ 93%] Built target net_interface_sanitized
-[ 95%] Built target net_interface
-[ 96%] Built target byte_stream_basics_sanitized
-[ 97%] Built target router_sanitized
-[ 98%] Built target byte_stream_capacity_sanitized
-[100%] Built target byte_stream_one_write_sanitized
+[  1%] Built target minnow_testing_sanitized
+[  2%] Built target minnow_testing_debug
+[  2%] [32mBuilding CXX object src/CMakeFiles/minnow_sanitized.dir/reassembler.cc.o[0m
+[  3%] [32mBuilding CXX object util/CMakeFiles/util_sanitized.dir/tcp_minnow_socket.cc.o[0m
+[35m[1mConsolidate compiler generated dependencies of target minnow_debug[0m
+[  8%] Built target minnow_debug
+[  9%] [32mBuilding CXX object src/CMakeFiles/minnow_sanitized.dir/tcp_receiver.cc.o[0m
+[35m[1mConsolidate compiler generated dependencies of target util_debug[0m
+[ 16%] Built target util_debug
+[ 16%] [32m[1mLinking CXX executable router[0m
+[ 16%] [32m[1mLinking CXX executable byte_stream_basics[0m
+[ 18%] Built target byte_stream_basics
+[ 18%] Built target router
+[ 19%] [32m[1mLinking CXX executable byte_stream_capacity[0m
+[ 19%] [32m[1mLinking CXX executable byte_stream_one_write[0m
+[ 20%] Built target byte_stream_capacity
+[ 20%] Built target byte_stream_one_write
+[ 20%] [32m[1mLinking CXX executable byte_stream_two_writes[0m
+[ 21%] [32m[1mLinking CXX executable byte_stream_many_writes[0m
+[ 21%] [32m[1mLinking CXX static library libminnow_sanitized.a[0m
+[ 21%] Built target byte_stream_many_writes
+[ 22%] Built target byte_stream_two_writes
+[ 22%] [32m[1mLinking CXX executable byte_stream_stress_test[0m
+[ 22%] [32mBuilding CXX object tests/CMakeFiles/reassembler_single.dir/reassembler_single.cc.o[0m
+[ 24%] Built target byte_stream_stress_test
+[ 24%] [32mBuilding CXX object tests/CMakeFiles/reassembler_cap.dir/reassembler_cap.cc.o[0m
+[ 27%] Built target minnow_sanitized
+[ 27%] [32mBuilding CXX object tests/CMakeFiles/reassembler_seq.dir/reassembler_seq.cc.o[0m
+[ 27%] [32m[1mLinking CXX executable reassembler_single[0m
+[ 27%] Built target reassembler_single
+[ 28%] [32mBuilding CXX object tests/CMakeFiles/reassembler_dup.dir/reassembler_dup.cc.o[0m
+[ 30%] [32m[1mLinking CXX executable reassembler_cap[0m
+[ 30%] Built target reassembler_cap
+[ 31%] [32m[1mLinking CXX executable reassembler_seq[0m
+[ 32%] [32mBuilding CXX object tests/CMakeFiles/reassembler_holes.dir/reassembler_holes.cc.o[0m
+[ 33%] [32m[1mLinking CXX static library libutil_sanitized.a[0m
+[ 33%] Built target reassembler_seq
+[ 33%] [32mBuilding CXX object tests/CMakeFiles/reassembler_overlapping.dir/reassembler_overlapping.cc.o[0m
+[ 33%] [32m[1mLinking CXX executable reassembler_dup[0m
+[ 33%] Built target reassembler_dup
+[ 34%] [32mBuilding CXX object tests/CMakeFiles/reassembler_win.dir/reassembler_win.cc.o[0m
+[ 34%] [32m[1mLinking CXX executable reassembler_holes[0m
+[ 34%] Built target reassembler_holes
+[ 36%] [32m[1mLinking CXX executable wrapping_integers_cmp[0m
+[ 37%] [32m[1mLinking CXX executable reassembler_overlapping[0m
+[ 37%] Built target wrapping_integers_cmp
+[ 38%] [32m[1mLinking CXX executable wrapping_integers_wrap[0m
+[ 38%] Built target wrapping_integers_wrap
+[ 38%] Built target reassembler_overlapping
+[ 39%] [32m[1mLinking CXX executable wrapping_integers_unwrap[0m
+[ 39%] [32m[1mLinking CXX executable wrapping_integers_roundtrip[0m
+[ 39%] Built target wrapping_integers_unwrap
+[ 39%] [32m[1mLinking CXX executable wrapping_integers_extra[0m
+[ 40%] Built target wrapping_integers_roundtrip
+[ 40%] [32mBuilding CXX object tests/CMakeFiles/recv_connect.dir/recv_connect.cc.o[0m
+[ 42%] Built target wrapping_integers_extra
+[ 42%] [32m[1mLinking CXX executable reassembler_win[0m
+[ 42%] [32mBuilding CXX object tests/CMakeFiles/recv_transmit.dir/recv_transmit.cc.o[0m
+[ 42%] Built target reassembler_win
+[ 42%] [32mBuilding CXX object tests/CMakeFiles/recv_window.dir/recv_window.cc.o[0m
+[ 43%] [32m[1mLinking CXX executable recv_connect[0m
+[ 43%] Built target recv_connect
+[ 43%] [32mBuilding CXX object tests/CMakeFiles/recv_reorder.dir/recv_reorder.cc.o[0m
+[ 48%] Built target util_sanitized
+[ 48%] [32m[1mLinking CXX executable recv_window[0m
+[ 49%] [32mBuilding CXX object tests/CMakeFiles/recv_reorder_more.dir/recv_reorder_more.cc.o[0m
+[ 49%] Built target recv_window
+[ 49%] [32mBuilding CXX object tests/CMakeFiles/recv_close_sanitized.dir/recv_close.cc.o[0m
+[ 50%] [32m[1mLinking CXX executable recv_transmit[0m
+[ 50%] Built target recv_transmit
+[ 50%] [32mBuilding CXX object tests/CMakeFiles/recv_close.dir/recv_close.cc.o[0m
+[ 50%] [32m[1mLinking CXX executable recv_reorder[0m
+[ 50%] Built target recv_reorder
+[ 50%] [32mBuilding CXX object tests/CMakeFiles/recv_special_sanitized.dir/recv_special.cc.o[0m
+[ 50%] [32m[1mLinking CXX executable recv_reorder_more[0m
+[ 50%] Built target recv_reorder_more
+[ 51%] [32mBuilding CXX object tests/CMakeFiles/recv_special.dir/recv_special.cc.o[0m
+[ 53%] [32m[1mLinking CXX executable recv_close[0m
+[ 53%] Built target recv_close
+[ 54%] [32m[1mLinking CXX executable recv_close_sanitized[0m
+[ 54%] [32m[1mLinking CXX executable send_connect_sanitized[0m
+[ 54%] Built target send_connect_sanitized
+[ 55%] [32m[1mLinking CXX executable send_connect[0m
+[ 55%] Built target recv_close_sanitized
+[ 55%] [32m[1mLinking CXX executable recv_special[0m
+[ 56%] [32m[1mLinking CXX executable send_transmit_sanitized[0m
+[ 56%] Built target send_connect
+[ 56%] Built target recv_special
+[ 57%] [32m[1mLinking CXX executable send_transmit[0m
+[ 57%] [32m[1mLinking CXX executable send_retx_sanitized[0m
+[ 57%] Built target send_transmit_sanitized
+[ 59%] [32m[1mLinking CXX executable recv_special_sanitized[0m
+[ 59%] Built target send_transmit
+[ 59%] [32m[1mLinking CXX executable send_retx[0m
+[ 60%] [32m[1mLinking CXX executable send_window_sanitized[0m
+[ 61%] Built target send_retx_sanitized
+[ 62%] Built target send_retx
+[ 63%] [32m[1mLinking CXX executable send_window[0m
+[ 65%] [32m[1mLinking CXX executable send_ack_sanitized[0m
+[ 65%] Built target send_window_sanitized
+[ 65%] Built target recv_special_sanitized
+[ 65%] [32m[1mLinking CXX executable send_ack[0m
+[ 65%] Built target send_window
+[ 66%] [32m[1mLinking CXX executable send_close_sanitized[0m
+[ 67%] [32m[1mLinking CXX executable send_close[0m
+[ 68%] Built target send_ack
+[ 68%] Built target send_ack_sanitized
+[ 68%] [32m[1mLinking CXX executable send_extra_sanitized[0m
+[ 68%] [32m[1mLinking CXX executable send_extra[0m
+[ 68%] Built target send_close
+[ 68%] Built target send_close_sanitized
+[ 69%] [32m[1mLinking CXX executable net_interface_sanitized[0m
+[ 71%] [32m[1mLinking CXX executable net_interface[0m
+[ 72%] Built target send_extra
+[ 72%] Built target net_interface
+[ 72%] [32m[1mLinking CXX executable router_sanitized[0m
+[ 73%] Built target send_extra_sanitized
+[ 73%] [32m[1mLinking CXX executable byte_stream_basics_sanitized[0m
+[ 73%] [32m[1mLinking CXX executable byte_stream_capacity_sanitized[0m
+[ 73%] Built target net_interface_sanitized
+[ 74%] [32m[1mLinking CXX executable byte_stream_one_write_sanitized[0m
+[ 75%] Built target byte_stream_basics_sanitized
+[ 75%] [32m[1mLinking CXX executable byte_stream_two_writes_sanitized[0m
+[ 77%] Built target byte_stream_capacity_sanitized
+[ 79%] [32m[1mLinking CXX executable byte_stream_many_writes_sanitized[0m
+[ 79%] Built target router_sanitized
+[ 79%] [32m[1mLinking CXX executable byte_stream_stress_test_sanitized[0m
+[ 79%] Built target byte_stream_one_write_sanitized
+[ 80%] [32mBuilding CXX object tests/CMakeFiles/reassembler_single_sanitized.dir/reassembler_single.cc.o[0m
+[ 80%] Built target byte_stream_many_writes_sanitized
+[ 81%] Built target byte_stream_two_writes_sanitized
+[ 81%] [32mBuilding CXX object tests/CMakeFiles/reassembler_cap_sanitized.dir/reassembler_cap.cc.o[0m
+[ 83%] Built target byte_stream_stress_test_sanitized
+[ 83%] [32mBuilding CXX object tests/CMakeFiles/reassembler_seq_sanitized.dir/reassembler_seq.cc.o[0m
+[ 84%] [32mBuilding CXX object tests/CMakeFiles/reassembler_dup_sanitized.dir/reassembler_dup.cc.o[0m
+[ 84%] [32m[1mLinking CXX executable reassembler_single_sanitized[0m
+[ 84%] Built target reassembler_single_sanitized
+[ 85%] [32mBuilding CXX object tests/CMakeFiles/reassembler_holes_sanitized.dir/reassembler_holes.cc.o[0m
+[ 85%] [32m[1mLinking CXX executable reassembler_cap_sanitized[0m
+[ 85%] [32m[1mLinking CXX executable reassembler_dup_sanitized[0m
+[ 85%] Built target reassembler_cap_sanitized
+[ 85%] [32mBuilding CXX object tests/CMakeFiles/reassembler_overlapping_sanitized.dir/reassembler_overlapping.cc.o[0m
+[ 86%] [32m[1mLinking CXX executable reassembler_seq_sanitized[0m
+[ 86%] Built target reassembler_dup_sanitized
+[ 87%] [32mBuilding CXX object tests/CMakeFiles/reassembler_win_sanitized.dir/reassembler_win.cc.o[0m
+[ 87%] Built target reassembler_seq_sanitized
+[ 87%] [32m[1mLinking CXX executable wrapping_integers_cmp_sanitized[0m
+[ 87%] Built target wrapping_integers_cmp_sanitized
+[ 89%] [32m[1mLinking CXX executable wrapping_integers_wrap_sanitized[0m
+[ 89%] Built target wrapping_integers_wrap_sanitized
+[ 90%] [32m[1mLinking CXX executable wrapping_integers_unwrap_sanitized[0m
+[ 90%] Built target wrapping_integers_unwrap_sanitized
+[ 90%] [32m[1mLinking CXX executable wrapping_integers_roundtrip_sanitized[0m
+[ 91%] Built target wrapping_integers_roundtrip_sanitized
+[ 91%] [32m[1mLinking CXX executable wrapping_integers_extra_sanitized[0m
+[ 92%] Built target wrapping_integers_extra_sanitized
+[ 92%] [32m[1mLinking CXX executable reassembler_holes_sanitized[0m
+[ 92%] [32mBuilding CXX object tests/CMakeFiles/recv_connect_sanitized.dir/recv_connect.cc.o[0m
+[ 92%] Built target reassembler_holes_sanitized
+[ 92%] [32mBuilding CXX object tests/CMakeFiles/recv_transmit_sanitized.dir/recv_transmit.cc.o[0m
+[ 93%] [32m[1mLinking CXX executable reassembler_overlapping_sanitized[0m
+[ 93%] Built target reassembler_overlapping_sanitized
+[ 95%] [32mBuilding CXX object tests/CMakeFiles/recv_window_sanitized.dir/recv_window.cc.o[0m
+[ 95%] [32m[1mLinking CXX executable reassembler_win_sanitized[0m
+[ 95%] Built target reassembler_win_sanitized
+[ 96%] [32mBuilding CXX object tests/CMakeFiles/recv_reorder_sanitized.dir/recv_reorder.cc.o[0m
+[ 97%] [32m[1mLinking CXX executable recv_connect_sanitized[0m
+[ 97%] Built target recv_connect_sanitized
+[ 98%] [32mBuilding CXX object tests/CMakeFiles/recv_reorder_more_sanitized.dir/recv_reorder_more.cc.o[0m
+[100%] [32m[1mLinking CXX executable recv_transmit_sanitized[0m
+[100%] Built target recv_transmit_sanitized
+[100%] [32m[1mLinking CXX executable recv_window_sanitized[0m
+[100%] Built target recv_window_sanitized
+[100%] [32m[1mLinking CXX executable recv_reorder_sanitized[0m
+[100%] Built target recv_reorder_sanitized
+[100%] [32m[1mLinking CXX executable recv_reorder_more_sanitized[0m
+[100%] Built target recv_reorder_more_sanitized
 [100%] Built target functionality_testing
-[  0%] Built target stream_copy
+[ 27%] Built target stream_copy
 [ 36%] Built target minnow_debug
 [ 90%] Built target util_debug
 [100%] Built target webget
 <end of output>
-Test time =   6.16 sec
+Test time = 150.19 sec
 ----------------------------------------------------------
 Test Passed.
-"compile with bug-checkers" end time: Sep 25 18:53 UTC
-"compile with bug-checkers" time elapsed: 00:00:06
+"compile with bug-checkers" end time: Sep 27 03:23 UTC
+"compile with bug-checkers" time elapsed: 00:02:30
 ----------------------------------------------------------
 
 2/39 Testing: t_webget
 2/39 Test: t_webget
 Command: "/media/sf_minnow/tests/webget_t.sh" "/media/sf_minnow/build"
 Directory: /media/sf_minnow/build
-"t_webget" start time: Sep 25 18:53 UTC
+"t_webget" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
 HTTP/1.1 200 OK
@@ -107,10 +210,10 @@ Content-type: text/plain
 
 7SmXqWkrLKzVBCEalbSPqBcvs11Pw263K7x4Wv3JckI
 <end of output>
-Test time =   0.86 sec
+Test time =   0.84 sec
 ----------------------------------------------------------
 Test Passed.
-"t_webget" end time: Sep 25 18:53 UTC
+"t_webget" end time: Sep 27 03:23 UTC
 "t_webget" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -118,14 +221,14 @@ Test Passed.
 3/39 Test: byte_stream_basics
 Command: "/media/sf_minnow/build/tests/byte_stream_basics_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_basics" start time: Sep 25 18:53 UTC
+"byte_stream_basics" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.02 sec
+Test time =   0.12 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_basics" end time: Sep 25 18:53 UTC
+"byte_stream_basics" end time: Sep 27 03:23 UTC
 "byte_stream_basics" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -133,14 +236,14 @@ Test Passed.
 4/39 Test: byte_stream_capacity
 Command: "/media/sf_minnow/build/tests/byte_stream_capacity_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_capacity" start time: Sep 25 18:53 UTC
+"byte_stream_capacity" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_capacity" end time: Sep 25 18:53 UTC
+"byte_stream_capacity" end time: Sep 27 03:23 UTC
 "byte_stream_capacity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -148,14 +251,14 @@ Test Passed.
 5/39 Test: byte_stream_one_write
 Command: "/media/sf_minnow/build/tests/byte_stream_one_write_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_one_write" start time: Sep 25 18:53 UTC
+"byte_stream_one_write" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_one_write" end time: Sep 25 18:53 UTC
+"byte_stream_one_write" end time: Sep 27 03:23 UTC
 "byte_stream_one_write" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -163,14 +266,14 @@ Test Passed.
 6/39 Test: byte_stream_two_writes
 Command: "/media/sf_minnow/build/tests/byte_stream_two_writes_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_two_writes" start time: Sep 25 18:53 UTC
+"byte_stream_two_writes" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_two_writes" end time: Sep 25 18:53 UTC
+"byte_stream_two_writes" end time: Sep 27 03:23 UTC
 "byte_stream_two_writes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -178,14 +281,14 @@ Test Passed.
 7/39 Test: byte_stream_many_writes
 Command: "/media/sf_minnow/build/tests/byte_stream_many_writes_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_many_writes" start time: Sep 25 18:53 UTC
+"byte_stream_many_writes" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_many_writes" end time: Sep 25 18:53 UTC
+"byte_stream_many_writes" end time: Sep 27 03:23 UTC
 "byte_stream_many_writes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -193,14 +296,14 @@ Test Passed.
 8/39 Test: byte_stream_stress_test
 Command: "/media/sf_minnow/build/tests/byte_stream_stress_test_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_stress_test" start time: Sep 25 18:53 UTC
+"byte_stream_stress_test" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.17 sec
+Test time =   0.19 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_stress_test" end time: Sep 25 18:53 UTC
+"byte_stream_stress_test" end time: Sep 27 03:23 UTC
 "byte_stream_stress_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -208,37 +311,49 @@ Test Passed.
 37/39 Test: compile with optimization
 Command: "/usr/bin/cmake" "--build" "/media/sf_minnow/build" "-t" "speed_testing"
 Directory: /media/sf_minnow/build
-"compile with optimization" start time: Sep 25 18:53 UTC
+"compile with optimization" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
 make[4]: warning: -j4 forced in submake: resetting jobserver mode.
-[ 66%] Built target minnow_optimized
+[  0%] [32mBuilding CXX object src/CMakeFiles/minnow_optimized.dir/reassembler.cc.o[0m
+[  8%] [32mBuilding CXX object src/CMakeFiles/minnow_optimized.dir/tcp_receiver.cc.o[0m
+[  8%] [32mBuilding CXX object util/CMakeFiles/util_optimized.dir/tcp_minnow_socket.cc.o[0m
+[  8%] [32m[1mLinking CXX static library libminnow_optimized.a[0m
+[ 33%] Built target minnow_optimized
+[ 41%] [32m[1mLinking CXX static library libutil_optimized.a[0m
 [ 91%] Built target util_optimized
-[ 91%] Built target byte_stream_speed_test
+make[7]: Warning: File 'util/libutil_optimized.a' has modification time 0.38 s in the future
+make[7]: Warning: File 'util/libutil_optimized.a' has modification time 0.37 s in the future
+[ 91%] [32m[1mLinking CXX executable byte_stream_speed_test[0m
+[100%] [32mBuilding CXX object tests/CMakeFiles/reassembler_speed_test.dir/reassembler_speed_test.cc.o[0m
+make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[100%] Built target byte_stream_speed_test
+[100%] [32m[1mLinking CXX executable reassembler_speed_test[0m
+make[7]: warning:  Clock skew detected.  Your build may be incomplete.
 [100%] Built target reassembler_speed_test
 [100%] Built target speed_testing
 <end of output>
-Test time =   0.64 sec
+Test time =  16.32 sec
 ----------------------------------------------------------
 Test Passed.
-"compile with optimization" end time: Sep 25 18:53 UTC
-"compile with optimization" time elapsed: 00:00:00
+"compile with optimization" end time: Sep 27 03:23 UTC
+"compile with optimization" time elapsed: 00:00:16
 ----------------------------------------------------------
 
 38/39 Testing: byte_stream_speed_test
 38/39 Test: byte_stream_speed_test
 Command: "/media/sf_minnow/build/tests/byte_stream_speed_test"
 Directory: /media/sf_minnow/build
-"byte_stream_speed_test" start time: Sep 25 18:53 UTC
+"byte_stream_speed_test" start time: Sep 27 03:23 UTC
 Output:
 ----------------------------------------------------------
-ByteStream with capacity=32768, write_size=1500, read_size=128 reached 7.13 Gbit/s.
+ByteStream with capacity=32768, write_size=1500, read_size=128 reached 6.59 Gbit/s.
 <end of output>
-Test time =   0.29 sec
+Test time =   0.27 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_speed_test" end time: Sep 25 18:53 UTC
+"byte_stream_speed_test" end time: Sep 27 03:23 UTC
 "byte_stream_speed_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 25 18:53 UTC
+End testing: Sep 27 03:23 UTC

@@ -3,10 +3,15 @@
 #include "byte_stream.hh"
 
 #include <string>
+#include <iostream>
+#include <map>
+
 
 class Reassembler
 {
 public:
+    Reassembler() : first_unassembled_index_{0}, temp_storage_{}, last_index_{0}, b_last_substring_recieved_{false} {}
+
   /*
    * Insert a new substring to be reassembled into a ByteStream.
    *   `first_index`: the index of the first byte of the substring
@@ -31,4 +36,32 @@ public:
 
   // How many bytes are stored in the Reassembler itself?
   uint64_t bytes_pending() const;
+
+
+  /*
+   * Accessors
+   * */
+  uint64_t first_unassembled_index() const { return first_unassembled_index_; }
+  const std::map<uint64_t, Buffer>& temp_storage() const { return temp_storage_; }
+  size_t last_index() const { return last_index_; }
+
+private:
+    uint64_t first_unassembled_index_;
+    std::map<uint64_t, Buffer> temp_storage_;
+    size_t last_index_;
+    bool b_last_substring_recieved_;
 };
+
+[[maybe_unused]]
+static std::ostream& operator<<(std::ostream& os, const Reassembler& r) {
+    os << "===== Reassembler Begin ====" << "\n";
+    os << "First Unassembled Index: " << r.first_unassembled_index() << "\n";
+
+    os << "Temp Storage: \n";
+    for(const auto& [index, buffer] : r.temp_storage() ) {
+        os << index << " ---> " << static_cast<std::string_view>(buffer) << "\n";
+    }
+
+    os << "===== Reassembler End ====" << "\n";
+    return os;
+}
