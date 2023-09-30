@@ -1,16 +1,14 @@
 compile 0 0
-t_webget 36 0.0221898
+t_webget 51 0.0159711
 compile 0 0
-byte_stream_basics 32 0.000682854
-byte_stream_capacity 18 0.0152601
-byte_stream_one_write 14 0.00348224
-byte_stream_two_writes 14 0.0156164
-byte_stream_many_writes 14 0.0185557
-byte_stream_stress_test 12 0.0173684
+byte_stream_basics 51 0.000316131
+byte_stream_capacity 37 0.000501981
+byte_stream_one_write 33 0.000617305
+byte_stream_two_writes 33 0.000650434
+byte_stream_many_writes 33 0.00251505
+byte_stream_stress_test 31 0.00626743
 compile 0 0
-byte_stream_speed_test 12 0.0316387
-compile 0 0
-compile 0 0
+byte_stream_speed_test 27 0
 compile 0 0
 compile 0 0
 compile 0 0
@@ -19,7 +17,9 @@ compile 0 0
 compile 0 0
 compile 0 0
 compile 0 0
-reassembler_single 0 0
+compile 0 0
+compile 0 0
+reassembler_single 2 0.0474994
 reassembler_cap 0 0
 reassembler_seq 0 0
 reassembler_dup 0 0
@@ -118,6 +118,45 @@ compile 0 0
 compile 0 0
 compile 0 0
 compile 0 0
-compile with bug-checkers 1 174.507
-compile with optimization 1 31.0543
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile 0 0
+compile with bug-checkers 1 10.8608
+compile with optimization 0 0
 ---
+reassembler_cap

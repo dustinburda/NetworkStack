@@ -15,16 +15,20 @@
 
 class CircBuffer {
 public:
-    CircBuffer() : buffer_{}, first_unpopped_index_{0}, size_{0} {}
+    CircBuffer() : buffer_{}, first_unpopped_index_{0}, size_{0}, b_size_set{false} {}
 
-    explicit CircBuffer(size_t size) : buffer_{}, first_unpopped_index_{0}, size_{size} {
+    explicit CircBuffer(size_t size) : buffer_{}, first_unpopped_index_{0}, size_{size}, b_size_set{true} {
         buffer_.resize(size);
         std::memset(buffer_.data(), ' ', size_);
+        b_size_set = true;
     }
 
     void set_size(size_t size) {
+        if(!b_size_set)
+            return;
         buffer_.resize(size);
         std::memset(buffer_.data(), ' ', size_);
+        b_size_set = true;
     }
 
     void insert(uint64_t first_index, std::string data) {
@@ -79,6 +83,7 @@ private:
     std::vector<char> buffer_;
     uint64_t first_unpopped_index_; // only to print
     size_t size_;
+    bool b_size_set;
 };
 
 [[maybe_unused]]

@@ -56,6 +56,7 @@ public:
     }
 
     const std::set<Interval>& return_set() const { return interval_set; }
+    std::set<Interval>& return_modifiable_set() { return interval_set; }
 
 private:
 
