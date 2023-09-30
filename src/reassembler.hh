@@ -5,12 +5,17 @@
 #include <string>
 #include <iostream>
 #include <map>
+#include <vector>
+#include <sstream>
+#include "Intervals.h"
+#include "CircBuffer.h"
 
 
 class Reassembler
 {
 public:
-    Reassembler() : first_unassembled_index_{0}, temp_storage_{}, last_index_{0}, b_last_substring_recieved_{false} {}
+    Reassembler() : first_unassembled_index_{0}, first_unacceptable_index_{0}, first_unpopped_index_{0},
+                    fixed_buffer_{}, intervalset_{},  reassembler_size_{0}, last_index_{0}, b_last_substring_recieved_{false} {}
 
   /*
    * Insert a new substring to be reassembled into a ByteStream.
@@ -42,25 +47,35 @@ public:
    * Accessors
    * */
   uint64_t first_unassembled_index() const { return first_unassembled_index_; }
-  const std::map<uint64_t, Buffer>& temp_storage() const { return temp_storage_; }
+  uint64_t first_unacceptable_index() const { return first_unacceptable_index_; }
+  const CircBuffer& fixed_buffer() const { return fixed_buffer_; }
+  size_t reassembler_size() const { return reassembler_size_; }
   size_t last_index() const { return last_index_; }
 
 private:
     uint64_t first_unassembled_index_;
-    std::map<uint64_t, Buffer> temp_storage_;
-    size_t last_index_;
-    bool b_last_substring_recieved_;
+    uint64_t first_unacceptable_index_;
+    uint64_t first_unpopped_index_;
+
+    CircBuffer fixed_buffer_;
+    IntervalSet intervalset_;
+
+    size_t reassembler_size_;
+
+    size_t last_index_; // close bytestream when Writer.bytes_pushed() == last_index_
+    bool b_last_substring_recieved_; // TODO Do we need this?
 };
 
 [[maybe_unused]]
 static std::ostream& operator<<(std::ostream& os, const Reassembler& r) {
     os << "===== Reassembler Begin ====" << "\n";
     os << "First Unassembled Index: " << r.first_unassembled_index() << "\n";
+    os << "First Unacceptable Index: " << r.first_unacceptable_index() << "\n";
+    // TODO Print all member variables
 
-    os << "Temp Storage: \n";
-    for(const auto& [index, buffer] : r.temp_storage() ) {
-        os << index << " ---> " << static_cast<std::string_view>(buffer) << "\n";
-    }
+    os << "Buffer: \n";
+    std::cout << r.fixed_buffer();
+    std::cout << "\n";
 
     os << "===== Reassembler End ====" << "\n";
     return os;

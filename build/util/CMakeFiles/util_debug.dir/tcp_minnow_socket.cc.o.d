@@ -256,7 +256,11 @@ util/CMakeFiles/util_debug.dir/tcp_minnow_socket.cc.o: \
  /media/sf_minnow/util/tcp_peer.hh /media/sf_minnow/src/tcp_receiver.hh \
  /media/sf_minnow/src/reassembler.hh /usr/include/c++/12/map \
  /usr/include/c++/12/bits/stl_tree.h /usr/include/c++/12/bits/stl_map.h \
- /usr/include/c++/12/bits/stl_multimap.h \
+ /usr/include/c++/12/bits/stl_multimap.h /usr/include/c++/12/sstream \
+ /usr/include/c++/12/bits/sstream.tcc /media/sf_minnow/src/Intervals.h \
+ /usr/include/c++/12/set /usr/include/c++/12/bits/stl_set.h \
+ /usr/include/c++/12/bits/stl_multiset.h \
+ /media/sf_minnow/src/CircBuffer.h \
  /media/sf_minnow/util/tcp_receiver_message.hh \
  /media/sf_minnow/util/tcp_sender_message.hh \
  /media/sf_minnow/util/tcp_segment.hh /media/sf_minnow/util/udinfo.hh \
