@@ -13,21 +13,25 @@
 #include <cstring>
 #include <algorithm>
 
+
+
 class CircBuffer {
 public:
-    CircBuffer() : buffer_{}, first_unpopped_index_{0}, size_{0}, b_size_set{false} {}
+    CircBuffer() : buffer_{}, first_unpopped_index_{0}, size_{65000}, b_size_set{false} {}
 
     explicit CircBuffer(size_t size) : buffer_{}, first_unpopped_index_{0}, size_{size}, b_size_set{true} {
         buffer_.resize(size);
+        size_ = size;
         std::memset(buffer_.data(), ' ', size_);
         b_size_set = true;
     }
 
     void set_size(size_t size) {
-        if(!b_size_set)
+        if(b_size_set)
             return;
         buffer_.resize(size);
-        std::memset(buffer_.data(), ' ', size_);
+        size_ = size;
+         std::memset(buffer_.data(), ' ', size_);
         b_size_set = true;
     }
 
@@ -36,12 +40,13 @@ public:
         size_t first_size = size_ - index; // Space left from index to end of buffer
 
         // std::string first, second;
-        // TODO replace with std::memcpy calls
         if( first_size < data.size() ) {
             std::memcpy(buffer_.data() + index, data.data(), first_size);
             std::memcpy(buffer_.data(), data.data() + first_size, data.size() - first_size);
         }
         else {
+//            std::cout << "Buffer size: " << buffer_.size();
+//            printf("Buffer Data: 0x%zx", (size_t)buffer_.data());
             std::memcpy(buffer_.data() + index, data.data(), data.size());
         }
     }
@@ -93,10 +98,10 @@ static std::ostream& operator<<(std::ostream& os, const CircBuffer& c) {
     }
     std::cout << "\n";
 
-    int offset = c.first_unpopped() % c.capacity();
+    size_t offset = c.first_unpopped() % c.capacity();
 
     for(size_t i = 0; i < c.capacity(); i++) {
-        if(i == static_cast<size_t>(offset) )
+        if(i == offset )
             os <<"| * ";
         os << "|   ";
     }
@@ -104,10 +109,22 @@ static std::ostream& operator<<(std::ostream& os, const CircBuffer& c) {
 
 
     for(size_t i = 0; i < c.capacity(); i++) {
-        if( i < static_cast<size_t>(offset) ) {
-            os << "|" << (c.first_unpopped() - offset + i + c.capacity());
+        os << "|";
+        if(i < static_cast<size_t>(offset) ) {
+            auto virtual_address = (c.first_unpopped() - offset + i + c.capacity());
+            if(virtual_address < 100)
+                os << " ";
+            if(virtual_address < 10)
+                os << " ";
+            os << virtual_address;
         } else {
-            os << "|" << (c.first_unpopped() - offset + i);
+//            os << "|" << (c.first_unpopped() - offset + i);
+            auto virtual_address = (c.first_unpopped() - offset + i);
+            if(virtual_address < 100)
+                os << " ";
+            if(virtual_address < 10)
+                os << " ";
+            os << virtual_address;
         }
 
     }
@@ -117,7 +134,7 @@ static std::ostream& operator<<(std::ostream& os, const CircBuffer& c) {
 
 
     int i = 0;
-    std::for_each(c.buffer().begin(), c.buffer().end(), [&os, &i]([[maybe_unused]] char elem) {
+    std::for_each(c.buffer().begin(), c.buffer().end(), [&os, &i]( [[maybe_unused]] char elem) {
         os << "| " << i;
         if(i < 10)
             os << " ";
