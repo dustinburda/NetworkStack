@@ -48,9 +48,12 @@ public:
    * */
   uint64_t first_unassembled_index() const { return first_unassembled_index_; }
   uint64_t first_unacceptable_index() const { return first_unacceptable_index_; }
+  uint64_t first_unpopped_index() const { return first_unpopped_index_; }
   const CircBuffer& fixed_buffer() const { return fixed_buffer_; }
+  const IntervalSet& interval_set() const { return intervalset_; }
   size_t reassembler_size() const { return reassembler_size_; }
   size_t last_index() const { return last_index_; }
+  bool last_substring_recieved() const { return b_last_substring_recieved_; }
 
 private:
     uint64_t first_unassembled_index_;
@@ -74,9 +77,16 @@ static std::ostream& operator<<(std::ostream& os, const Reassembler& r) {
     // TODO Print all member variables
 
     os << "Buffer: \n";
-    std::cout << r.fixed_buffer();
+    os << r.fixed_buffer();
     std::cout << "\n";
 
+    // TODO Show interval_set;
+
+    os << "Interval Set: \n";
+    os << r.interval_set();
+
+    os << "Reassembler Size: " << r.reassembler_size() << "\n";
+    os << "Last Substring Recieved?: " << r.last_substring_recieved() << "  Last Index: " << r.last_index() << "\n";
     os << "===== Reassembler End ====" << "\n";
     return os;
 }

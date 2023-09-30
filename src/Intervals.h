@@ -55,6 +55,8 @@ public:
         std::cout << "\n";
     }
 
+    const std::set<Interval>& return_set() const { return interval_set; }
+
 private:
 
     static bool contains(uint64_t val, uint64_t start, uint64_t end) {
@@ -86,6 +88,15 @@ private:
 
     std::set<Interval> interval_set;
 };
+
+[[maybe_unused]]
+static std::ostream& operator<<(std::ostream& os, const IntervalSet& is) {
+    for( const auto& interval : is.return_set()) {
+        os << "[" << interval[0] << ", " << interval[1] << ") ";
+    }
+    os << "\n";
+    return os;
+}
 
 //
 //static bool contains(uint64_t val, uint64_t start, uint64_t end) {
