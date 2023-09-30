@@ -34,27 +34,10 @@ public:
         // std::string first, second;
         // TODO replace with std::memcpy calls
         if( first_size < data.size() ) {
-//            first = data.substr(0, first_size);
-//            second = data.substr(first_size, data.size() - first_size);
-
-//            for(int i = 0; i < first_size; i++) {
-//                buffer_[index + i] = first[i];
-//            }
             std::memcpy(buffer_.data() + index, data.data(), first_size);
-
-
-//            for(int i = 0; i < data.size() - first_size; i++) {
-//                buffer_[i] = second[i];
-//            }
-
             std::memcpy(buffer_.data(), data.data() + first_size, data.size() - first_size);
-
         }
         else {
-//            for(int i = 0; i < data.size(); i++) {
-//                buffer_[index + i] = data[i];
-//            }
-
             std::memcpy(buffer_.data() + index, data.data(), data.size());
         }
     }

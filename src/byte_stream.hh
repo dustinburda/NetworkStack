@@ -46,6 +46,8 @@ public:
       }
       std::cout << std::endl;
   }
+
+  uint64_t capacity() const { return capacity_; }
 };
 
 class Writer : public ByteStream

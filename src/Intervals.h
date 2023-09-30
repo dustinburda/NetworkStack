@@ -98,59 +98,5 @@ static std::ostream& operator<<(std::ostream& os, const IntervalSet& is) {
     return os;
 }
 
-//
-//static bool contains(uint64_t val, uint64_t start, uint64_t end) {
-//    return (val >= start && val <= end);
-//}
-
-
-//// @return - true if Interval i is contained entirely in some interval in interval_set
-//static bool get_mergeable(std::set<Interval>& interval_set, const Interval& i, std::vector<IntervalIt>& mergeable) {
-//    // TODO limit search space of loop
-//    for(auto it = interval_set.begin(); it != interval_set.end(); it++) {
-//        auto end_points = *it;
-//
-//        auto start = i[0];
-//        auto end = i[1];
-//
-//        auto si = end_points[0];
-//        auto ei = end_points[1];
-//
-//        if(contains(start, si, ei) && contains(end, si, ei))
-//            return true;
-//
-//        if(contains(si, start, end) || contains(ei, start, end)) {
-//            mergeable.push_back(it);
-//        }
-//    }
-//
-//    return false;
-//}
-
-
-//static void merge_and_insert(std::set<Interval>& interval_set, const Interval& i) {
-//    std::vector<IntervalIt> mergeable;
-//
-//    auto contained = get_mergeable(interval_set, i, mergeable);
-//
-//    if(i[0] == i[1]) //empty interval
-//        return;
-//
-//    if(contained)
-//        return;
-//
-//    auto interval_start = i[0];
-//    auto interval_end = i[1];
-//
-//    // TODO don't need loop, set is sorted
-//    for(auto interval_it : mergeable) {
-//        interval_start = std::min(interval_start, (*interval_it)[0]);
-//        interval_end = std::max(interval_end, (*interval_it)[1]);
-//
-//        interval_set.erase(interval_it);
-//    }
-//
-//    interval_set.insert({interval_start, interval_end});
-//}
 
 #endif //CIRCBUFFER_INTERVALS_H

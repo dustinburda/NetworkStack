@@ -11,8 +11,19 @@ void Reassembler::insert( uint64_t first_index, string data, bool is_last_substr
             a. first_unassembled_index = Writer.bytes_pushed() + 1
             b. first_unacceptable_index = first_unassembled_index + Writer.available_capacity()
 
-        2. Push into temp storage
+        2. Push data in circular buffer
 
+        3. Push interval into interval set
+
+        4. If the interval with lowest index has start == first_unassembled_index, pop this interval off,
+           record index (start) and length(end - start)
+
+        5. If Writer.bytes_pushed() == last_index_, call Writer.close()
+
+
+
+
+====================================================
         3. Merge overlapping strings in temp storage
 
         4. Pop all contiguous bytes off temp storage
@@ -20,13 +31,17 @@ void Reassembler::insert( uint64_t first_index, string data, bool is_last_substr
         (2, 4 will slow down reassembler TODO try to optimize after tests pass)
 
         5. If Writer.bytes_pushed() == last_index_, call Writer.close()
-
-
+===================================================
      * */
 
+
+    // TODO Set size of Circular Buffer because it's not known without Reassembler
+
+
+    first_unpopped_index_ = output.reader().bytes_popped();
     first_unassembled_index_ = output.bytes_pushed();
     first_unacceptable_index_ = first_unassembled_index_ + output.available_capacity();
-    first_unpopped_index_ = output.reader().bytes_popped();
+
 
     // TODO SYNC FIRST UNPOPPED INDEX WITH CIRCULAR BUFFER for PRINTING ONLY
 
