@@ -16,11 +16,11 @@ class Reassembler
 public:
     Reassembler() : first_unassembled_index_{0}, first_unacceptable_index_{0}, first_unpopped_index_{0},
                     fixed_buffer_{}, intervalset_{},  reassembler_size_{0}, last_index_{0}, b_last_substring_recieved_{false} {
-        std::cout << "============================== TEST BEGIN ===========================\n";
+//        std::cout << "============================== TEST BEGIN ===========================\n";
     }
 
     ~Reassembler() {
-        std::cout << "============================== TEST END ===========================\n\n";
+//        std::cout << "============================== TEST END ===========================\n\n";
     }
 
   /*
