@@ -7,6 +7,8 @@
 class TCPReceiver
 {
 public:
+    TCPReceiver() : isn_{0}, b_syn_recv_{false}, b_fin_recv{false} {}
+
   /*
    * The TCPReceiver receives TCPSenderMessages, inserting their payload into the Reassembler
    * at the correct stream index.
@@ -18,6 +20,6 @@ public:
 private:
     Wrap32 isn_;
     bool b_syn_recv_;
-    bool b_find_recv;
+    bool b_fin_recv;
 
 };

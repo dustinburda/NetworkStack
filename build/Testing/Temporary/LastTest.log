@@ -1,330 +1,114 @@
-Start testing: Oct 02 00:32 UTC
+Start testing: Oct 02 17:19 UTC
 ----------------------------------------------------------
 1/39 Testing: compile with bug-checkers
 1/39 Test: compile with bug-checkers
 Command: "/usr/bin/cmake" "--build" "/media/sf_minnow/build" "-t" "functionality_testing" "webget"
 Directory: /media/sf_minnow/build
-"compile with bug-checkers" start time: Oct 02 00:32 UTC
+"compile with bug-checkers" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 make[4]: warning: -j4 forced in submake: resetting jobserver mode.
-[  1%] Built target minnow_testing_debug
-[  2%] Built target minnow_testing_sanitized
-make[7]: Warning: File '/media/sf_minnow/src/wrapping_integers.cc' has modification time 111 s in the future
-[  3%] [32mBuilding CXX object src/CMakeFiles/minnow_debug.dir/wrapping_integers.cc.o[0m
-[ 10%] Built target util_debug
-make[7]: Warning: File '/media/sf_minnow/src/wrapping_integers.cc' has modification time 111 s in the future
-[ 16%] [32mBuilding CXX object src/CMakeFiles/minnow_sanitized.dir/wrapping_integers.cc.o[0m
-[ 19%] Built target util_sanitized
-[ 19%] [32m[1mLinking CXX static library libminnow_debug.a[0m
-[ 19%] [32m[1mLinking CXX static library libminnow_sanitized.a[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 22%] Built target minnow_debug
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 113 s in the future
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 113 s in the future
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 113 s in the future
-[ 22%] [32m[1mLinking CXX executable byte_stream_basics[0m
-[ 22%] [32m[1mLinking CXX executable router[0m
-[ 22%] [32m[1mLinking CXX executable byte_stream_capacity[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 22%] Built target byte_stream_basics
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 24%] Built target byte_stream_capacity
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 111 s in the future
-[ 25%] [32m[1mLinking CXX executable byte_stream_one_write[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 110 s in the future
-[ 25%] [32m[1mLinking CXX executable byte_stream_two_writes[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 26%] Built target router
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 110 s in the future
-[ 27%] [32m[1mLinking CXX executable byte_stream_many_writes[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 31%] Built target minnow_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 109 s in the future
-[ 31%] [32m[1mLinking CXX executable byte_stream_stress_test[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[  1%] Built target minnow_testing_sanitized
+[  2%] Built target minnow_testing_debug
+[  7%] Built target minnow_debug
+[ 14%] Built target util_debug
+[ 19%] Built target minnow_sanitized
+[ 21%] Built target router
+[ 27%] Built target util_sanitized
+[ 27%] Built target byte_stream_basics
+[ 28%] Built target byte_stream_capacity
 [ 31%] Built target byte_stream_one_write
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 32%] Built target byte_stream_two_writes
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 113 s in the future
-[ 32%] [32m[1mLinking CXX executable reassembler_single_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 108 s in the future
-[ 32%] [32m[1mLinking CXX executable reassembler_single[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 32%] Built target byte_stream_many_writes
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 112 s in the future
-[ 32%] [32m[1mLinking CXX executable reassembler_cap_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 33%] Built target byte_stream_stress_test
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 107 s in the future
-[ 34%] [32m[1mLinking CXX executable reassembler_cap[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 34%] Built target reassembler_single
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 111 s in the future
-[ 36%] [32m[1mLinking CXX executable reassembler_seq_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 31%] Built target byte_stream_two_writes
+[ 32%] Built target byte_stream_many_writes_sanitized
+[ 33%] Built target byte_stream_many_writes
+[ 34%] Built target byte_stream_stress_test
+[ 36%] Built target byte_stream_stress_test_sanitized
 [ 37%] Built target reassembler_single_sanitized
-[ 37%] Built target reassembler_cap
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 109 s in the future
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 105 s in the future
-[ 37%] [32m[1mLinking CXX executable reassembler_dup_sanitized[0m
-[ 38%] [32m[1mLinking CXX executable reassembler_seq[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 38%] Built target reassembler_cap_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 104 s in the future
-[ 38%] [32m[1mLinking CXX executable reassembler_dup[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 38%] Built target reassembler_seq_sanitized
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 106 s in the future
-[ 38%] [32m[1mLinking CXX executable reassembler_holes_sanitized[0m
-[ 38%] Built target reassembler_seq
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 101 s in the future
-[ 38%] [32m[1mLinking CXX executable reassembler_holes[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 39%] Built target reassembler_dup
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 104 s in the future
-[ 40%] [32m[1mLinking CXX executable reassembler_overlapping_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 42%] Built target reassembler_dup_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 98 s in the future
-[ 43%] [32m[1mLinking CXX executable reassembler_overlapping[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 44%] Built target reassembler_holes
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 100 s in the future
-[ 44%] [32m[1mLinking CXX executable reassembler_win_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 45%] Built target reassembler_holes_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 95 s in the future
-[ 45%] [32m[1mLinking CXX executable reassembler_win[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 45%] Built target reassembler_overlapping
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 98 s in the future
-[ 45%] Built target reassembler_overlapping_sanitized
-[ 45%] [32m[1mLinking CXX executable wrapping_integers_cmp_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 94 s in the future
-[ 46%] [32m[1mLinking CXX executable wrapping_integers_cmp[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 46%] Built target wrapping_integers_cmp_sanitized
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 46%] Built target wrapping_integers_cmp
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 96 s in the future
-[ 48%] [32m[1mLinking CXX executable wrapping_integers_wrap_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 92 s in the future
-[ 49%] [32m[1mLinking CXX executable wrapping_integers_wrap[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 37%] Built target reassembler_single
+[ 37%] Built target reassembler_cap_sanitized
+[ 38%] Built target reassembler_cap
+[ 39%] Built target reassembler_seq_sanitized
+[ 40%] Built target reassembler_seq
+[ 42%] Built target reassembler_dup
+[ 43%] Built target reassembler_dup_sanitized
+[ 44%] Built target reassembler_holes_sanitized
+[ 45%] Built target reassembler_holes
+[ 46%] Built target reassembler_win_sanitized
+[ 48%] Built target reassembler_overlapping_sanitized
+[ 49%] Built target reassembler_overlapping
 [ 50%] Built target reassembler_win
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 95 s in the future
-[ 51%] [32m[1mLinking CXX executable wrapping_integers_unwrap_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 53%] Built target reassembler_win_sanitized
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 53%] Built target wrapping_integers_wrap
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 50%] Built target wrapping_integers_cmp_sanitized
+[ 51%] Built target wrapping_integers_cmp
 [ 53%] Built target wrapping_integers_wrap_sanitized
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 94 s in the future
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 53%] [32m[1mLinking CXX executable wrapping_integers_roundtrip_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 90 s in the future
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 90 s in the future
-[ 54%] [32m[1mLinking CXX executable wrapping_integers_unwrap[0m
-[ 54%] Built target wrapping_integers_unwrap_sanitized
-[ 54%] [32m[1mLinking CXX executable wrapping_integers_roundtrip[0m
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 93 s in the future
-[ 54%] [32m[1mLinking CXX executable wrapping_integers_extra_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 54%] Built target wrapping_integers_unwrap
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 55%] Built target wrapping_integers_extra_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 88 s in the future
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 55%] [32m[1mLinking CXX executable wrapping_integers_extra[0m
-[ 57%] Built target wrapping_integers_roundtrip_sanitized
-[ 57%] Built target wrapping_integers_roundtrip
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 92 s in the future
-[ 59%] [32m[1mLinking CXX executable recv_connect_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 87 s in the future
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 91 s in the future
-[ 60%] [32m[1mLinking CXX executable recv_connect[0m
-[ 61%] [32m[1mLinking CXX executable recv_transmit_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 62%] Built target wrapping_integers_extra
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 87 s in the future
-[ 63%] [32m[1mLinking CXX executable recv_transmit[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 63%] Built target recv_connect
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 88 s in the future
-[ 63%] [32m[1mLinking CXX executable recv_window_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 63%] Built target recv_transmit
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 84 s in the future
-[ 63%] [32m[1mLinking CXX executable recv_window[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 63%] Built target recv_connect_sanitized
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 87 s in the future
+[ 54%] Built target wrapping_integers_wrap
+[ 55%] Built target wrapping_integers_unwrap_sanitized
+[ 56%] Built target wrapping_integers_roundtrip_sanitized
+[ 57%] Built target wrapping_integers_unwrap
+[ 59%] Built target wrapping_integers_roundtrip
+[ 60%] Built target wrapping_integers_extra_sanitized
+[ 61%] Built target wrapping_integers_extra
 [ 63%] Built target recv_transmit_sanitized
-[ 63%] [32m[1mLinking CXX executable recv_reorder_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 83 s in the future
-[ 63%] [32m[1mLinking CXX executable recv_reorder[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 63%] Built target recv_window
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 86 s in the future
+[ 63%] Built target recv_transmit
+[35m[1mConsolidate compiler generated dependencies of target recv_connect_sanitized[0m
+[ 65%] Built target recv_window
 [ 65%] Built target recv_window_sanitized
-[ 65%] [32m[1mLinking CXX executable recv_reorder_more_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 81 s in the future
-[ 65%] [32m[1mLinking CXX executable recv_reorder_more[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 65%] Built target recv_reorder
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 84 s in the future
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 66%] [32m[1mLinking CXX executable recv_close_sanitized[0m
-[ 67%] Built target recv_reorder_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 80 s in the future
-[ 68%] [32m[1mLinking CXX executable recv_close[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 69%] Built target recv_reorder_more
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 83 s in the future
-[ 71%] [32m[1mLinking CXX executable recv_special_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 72%] Built target recv_reorder_more_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 79 s in the future
-[ 72%] [32m[1mLinking CXX executable recv_special[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 72%] Built target recv_close
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 81 s in the future
-[ 72%] [32m[1mLinking CXX executable send_connect_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 73%] Built target recv_special
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[35m[1mConsolidate compiler generated dependencies of target recv_connect[0m
+[ 66%] Built target recv_connect_sanitized
+[ 66%] Built target recv_reorder
+[ 68%] Built target recv_reorder_sanitized
+[ 68%] Built target recv_connect
+[ 69%] Built target recv_reorder_more_sanitized
+[ 71%] Built target recv_reorder_more
+[ 73%] Built target recv_close
 [ 73%] Built target recv_close_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 76 s in the future
-[ 74%] [32m[1mLinking CXX executable send_connect[0m
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 80 s in the future
-[ 75%] [32m[1mLinking CXX executable send_transmit_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 75%] Built target recv_special_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 75 s in the future
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 75%] Built target send_connect_sanitized
-[ 77%] [32m[1mLinking CXX executable send_transmit[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 74%] Built target recv_special_sanitized
+[ 75%] Built target recv_special
 [ 77%] Built target send_connect
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 79 s in the future
-[ 77%] [32m[1mLinking CXX executable send_retx_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 75 s in the future
-[ 77%] [32m[1mLinking CXX executable send_retx[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 77%] Built target send_transmit
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 77%] Built target send_transmit_sanitized
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 78 s in the future
-[ 78%] [32m[1mLinking CXX executable send_window_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 79%] Built target send_retx
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 74 s in the future
-[ 80%] [32m[1mLinking CXX executable send_window[0m
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 77 s in the future
-[ 81%] [32m[1mLinking CXX executable send_ack_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 83%] Built target send_retx_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 73 s in the future
-[ 83%] [32m[1mLinking CXX executable send_ack[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 83%] Built target send_window
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 77%] Built target send_connect_sanitized
+[ 78%] Built target send_transmit_sanitized
+[ 79%] Built target send_transmit
+[ 80%] Built target send_retx_sanitized
+[ 81%] Built target send_retx
 [ 83%] Built target send_window_sanitized
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 76 s in the future
-[ 84%] [32m[1mLinking CXX executable send_close_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 72 s in the future
-[ 85%] [32m[1mLinking CXX executable send_close[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 84%] Built target send_window
 [ 85%] Built target send_ack_sanitized
-[ 86%] Built target send_ack
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 75 s in the future
-[ 86%] [32m[1mLinking CXX executable send_extra_sanitized[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 71 s in the future
-[ 86%] [32m[1mLinking CXX executable send_extra[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 86%] Built target send_close
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 74 s in the future
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 87%] [32m[1mLinking CXX executable net_interface_sanitized[0m
 [ 87%] Built target send_close_sanitized
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 70 s in the future
-[ 89%] [32m[1mLinking CXX executable net_interface[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 87%] Built target send_ack
+[ 89%] Built target send_close
 [ 90%] Built target send_extra_sanitized
 [ 91%] Built target send_extra
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 73 s in the future
-[ 91%] [32m[1mLinking CXX executable router_sanitized[0m
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 73 s in the future
-[ 91%] [32m[1mLinking CXX executable byte_stream_basics_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 91%] Built target net_interface
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 72 s in the future
-[ 91%] [32m[1mLinking CXX executable byte_stream_capacity_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 91%] Built target net_interface_sanitized
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 72 s in the future
-[ 92%] [32m[1mLinking CXX executable byte_stream_one_write_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 93%] Built target byte_stream_basics_sanitized
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 72 s in the future
-[ 93%] [32m[1mLinking CXX executable byte_stream_two_writes_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 95%] Built target byte_stream_capacity_sanitized
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 71 s in the future
-[ 96%] [32m[1mLinking CXX executable byte_stream_many_writes_sanitized[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 96%] Built target byte_stream_one_write_sanitized
-make[7]: Warning: File 'src/libminnow_sanitized.a' has modification time 70 s in the future
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 96%] [32m[1mLinking CXX executable byte_stream_stress_test_sanitized[0m
-[ 97%] Built target byte_stream_two_writes_sanitized
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 98%] Built target router_sanitized
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 98%] Built target byte_stream_many_writes_sanitized
-[100%] Built target byte_stream_stress_test_sanitized
+[ 92%] Built target net_interface_sanitized
+[ 93%] Built target net_interface
+[ 95%] Built target router_sanitized
+[ 96%] Built target byte_stream_basics_sanitized
+[ 97%] Built target byte_stream_capacity_sanitized
+[100%] Built target byte_stream_one_write_sanitized
+[100%] Built target byte_stream_two_writes_sanitized
 [100%] Built target functionality_testing
 [  0%] Built target stream_copy
-[ 54%] Built target util_debug
-[35m[1mConsolidate compiler generated dependencies of target minnow_debug[0m
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 64 s in the future
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
-[ 90%] Built target minnow_debug
-make[7]: Warning: File 'src/libminnow_debug.a' has modification time 64 s in the future
-[100%] [32m[1mLinking CXX executable webget[0m
-make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 36%] Built target minnow_debug
+[ 90%] Built target util_debug
 [100%] Built target webget
 <end of output>
-Test time =  54.14 sec
+Test time =   6.82 sec
 ----------------------------------------------------------
 Test Passed.
-"compile with bug-checkers" end time: Oct 02 00:33 UTC
-"compile with bug-checkers" time elapsed: 00:00:54
+"compile with bug-checkers" end time: Oct 02 17:19 UTC
+"compile with bug-checkers" time elapsed: 00:00:06
 ----------------------------------------------------------
 
 3/39 Testing: byte_stream_basics
 3/39 Test: byte_stream_basics
 Command: "/media/sf_minnow/build/tests/byte_stream_basics_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_basics" start time: Oct 02 00:33 UTC
+"byte_stream_basics" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_basics" end time: Oct 02 00:33 UTC
+"byte_stream_basics" end time: Oct 02 17:19 UTC
 "byte_stream_basics" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -332,14 +116,14 @@ Test Passed.
 4/39 Test: byte_stream_capacity
 Command: "/media/sf_minnow/build/tests/byte_stream_capacity_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_capacity" start time: Oct 02 00:33 UTC
+"byte_stream_capacity" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_capacity" end time: Oct 02 00:33 UTC
+"byte_stream_capacity" end time: Oct 02 17:19 UTC
 "byte_stream_capacity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -347,14 +131,14 @@ Test Passed.
 5/39 Test: byte_stream_one_write
 Command: "/media/sf_minnow/build/tests/byte_stream_one_write_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_one_write" start time: Oct 02 00:33 UTC
+"byte_stream_one_write" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.06 sec
+Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_one_write" end time: Oct 02 00:33 UTC
+"byte_stream_one_write" end time: Oct 02 17:19 UTC
 "byte_stream_one_write" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -362,14 +146,14 @@ Test Passed.
 6/39 Test: byte_stream_two_writes
 Command: "/media/sf_minnow/build/tests/byte_stream_two_writes_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_two_writes" start time: Oct 02 00:33 UTC
+"byte_stream_two_writes" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.02 sec
+Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_two_writes" end time: Oct 02 00:33 UTC
+"byte_stream_two_writes" end time: Oct 02 17:19 UTC
 "byte_stream_two_writes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -377,14 +161,14 @@ Test Passed.
 7/39 Test: byte_stream_many_writes
 Command: "/media/sf_minnow/build/tests/byte_stream_many_writes_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_many_writes" start time: Oct 02 00:33 UTC
+"byte_stream_many_writes" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.10 sec
+Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_many_writes" end time: Oct 02 00:33 UTC
+"byte_stream_many_writes" end time: Oct 02 17:19 UTC
 "byte_stream_many_writes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -392,14 +176,14 @@ Test Passed.
 8/39 Test: byte_stream_stress_test
 Command: "/media/sf_minnow/build/tests/byte_stream_stress_test_sanitized"
 Directory: /media/sf_minnow/build
-"byte_stream_stress_test" start time: Oct 02 00:33 UTC
+"byte_stream_stress_test" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.14 sec
+Test time =   0.18 sec
 ----------------------------------------------------------
 Test Passed.
-"byte_stream_stress_test" end time: Oct 02 00:33 UTC
+"byte_stream_stress_test" end time: Oct 02 17:19 UTC
 "byte_stream_stress_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -407,14 +191,14 @@ Test Passed.
 9/39 Test: reassembler_single
 Command: "/media/sf_minnow/build/tests/reassembler_single_sanitized"
 Directory: /media/sf_minnow/build
-"reassembler_single" start time: Oct 02 00:33 UTC
+"reassembler_single" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.17 sec
+Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"reassembler_single" end time: Oct 02 00:33 UTC
+"reassembler_single" end time: Oct 02 17:19 UTC
 "reassembler_single" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -422,14 +206,14 @@ Test Passed.
 10/39 Test: reassembler_cap
 Command: "/media/sf_minnow/build/tests/reassembler_cap_sanitized"
 Directory: /media/sf_minnow/build
-"reassembler_cap" start time: Oct 02 00:33 UTC
+"reassembler_cap" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.19 sec
+Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"reassembler_cap" end time: Oct 02 00:33 UTC
+"reassembler_cap" end time: Oct 02 17:19 UTC
 "reassembler_cap" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -437,14 +221,14 @@ Test Passed.
 11/39 Test: reassembler_seq
 Command: "/media/sf_minnow/build/tests/reassembler_seq_sanitized"
 Directory: /media/sf_minnow/build
-"reassembler_seq" start time: Oct 02 00:33 UTC
+"reassembler_seq" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"reassembler_seq" end time: Oct 02 00:33 UTC
+"reassembler_seq" end time: Oct 02 17:19 UTC
 "reassembler_seq" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -452,14 +236,14 @@ Test Passed.
 12/39 Test: reassembler_dup
 Command: "/media/sf_minnow/build/tests/reassembler_dup_sanitized"
 Directory: /media/sf_minnow/build
-"reassembler_dup" start time: Oct 02 00:33 UTC
+"reassembler_dup" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.22 sec
+Test time =   0.06 sec
 ----------------------------------------------------------
 Test Passed.
-"reassembler_dup" end time: Oct 02 00:33 UTC
+"reassembler_dup" end time: Oct 02 17:19 UTC
 "reassembler_dup" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -467,14 +251,14 @@ Test Passed.
 13/39 Test: reassembler_holes
 Command: "/media/sf_minnow/build/tests/reassembler_holes_sanitized"
 Directory: /media/sf_minnow/build
-"reassembler_holes" start time: Oct 02 00:33 UTC
+"reassembler_holes" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.17 sec
+Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"reassembler_holes" end time: Oct 02 00:33 UTC
+"reassembler_holes" end time: Oct 02 17:19 UTC
 "reassembler_holes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -482,14 +266,14 @@ Test Passed.
 14/39 Test: reassembler_overlapping
 Command: "/media/sf_minnow/build/tests/reassembler_overlapping_sanitized"
 Directory: /media/sf_minnow/build
-"reassembler_overlapping" start time: Oct 02 00:33 UTC
+"reassembler_overlapping" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.19 sec
+Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"reassembler_overlapping" end time: Oct 02 00:33 UTC
+"reassembler_overlapping" end time: Oct 02 17:19 UTC
 "reassembler_overlapping" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -497,114 +281,88 @@ Test Passed.
 15/39 Test: reassembler_win
 Command: "/media/sf_minnow/build/tests/reassembler_win_sanitized"
 Directory: /media/sf_minnow/build
-"reassembler_win" start time: Oct 02 00:33 UTC
+"reassembler_win" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.59 sec
+Test time =   0.57 sec
 ----------------------------------------------------------
 Test Passed.
-"reassembler_win" end time: Oct 02 00:33 UTC
+"reassembler_win" end time: Oct 02 17:19 UTC
 "reassembler_win" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-16/39 Testing: wrapping_integers_cmp
-16/39 Test: wrapping_integers_cmp
-Command: "/media/sf_minnow/build/tests/wrapping_integers_cmp_sanitized"
+37/39 Testing: compile with optimization
+37/39 Test: compile with optimization
+Command: "/usr/bin/cmake" "--build" "/media/sf_minnow/build" "-t" "speed_testing"
 Directory: /media/sf_minnow/build
-"wrapping_integers_cmp" start time: Oct 02 00:33 UTC
+"compile with optimization" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
+make[4]: warning: -j4 forced in submake: resetting jobserver mode.
+[35m[1mConsolidate compiler generated dependencies of target minnow_optimized[0m
+[  8%] [32mBuilding CXX object src/CMakeFiles/minnow_optimized.dir/byte_stream.cc.o[0m
+[  8%] [32mBuilding CXX object src/CMakeFiles/minnow_optimized.dir/byte_stream_helpers.cc.o[0m
+[  8%] [32mBuilding CXX object src/CMakeFiles/minnow_optimized.dir/reassembler.cc.o[0m
+[35m[1mConsolidate compiler generated dependencies of target util_optimized[0m
+[  8%] [32mBuilding CXX object util/CMakeFiles/util_optimized.dir/tcp_minnow_socket.cc.o[0m
+[ 16%] [32mBuilding CXX object src/CMakeFiles/minnow_optimized.dir/tcp_receiver.cc.o[0m
+[ 16%] [32mBuilding CXX object src/CMakeFiles/minnow_optimized.dir/tcp_sender.cc.o[0m
+[ 25%] [32mBuilding CXX object src/CMakeFiles/minnow_optimized.dir/wrapping_integers.cc.o[0m
+[ 25%] [32m[1mLinking CXX static library libminnow_optimized.a[0m
+[ 33%] Built target minnow_optimized
+[ 41%] [32m[1mLinking CXX static library libutil_optimized.a[0m
+[ 91%] Built target util_optimized
+make[7]: Warning: File 'src/libminnow_optimized.a' has modification time 2.4 s in the future
+[ 91%] [32mBuilding CXX object tests/CMakeFiles/byte_stream_speed_test.dir/byte_stream_speed_test.cc.o[0m
+[35m[1mConsolidate compiler generated dependencies of target reassembler_speed_test[0m
+make[7]: Warning: File 'src/libminnow_optimized.a' has modification time 2 s in the future
+[100%] [32mBuilding CXX object tests/CMakeFiles/reassembler_speed_test.dir/reassembler_speed_test.cc.o[0m
+[100%] [32m[1mLinking CXX executable byte_stream_speed_test[0m
+make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[100%] Built target byte_stream_speed_test
+[100%] [32m[1mLinking CXX executable reassembler_speed_test[0m
+make[7]: warning:  Clock skew detected.  Your build may be incomplete.
+[100%] Built target reassembler_speed_test
+[100%] Built target speed_testing
 <end of output>
-Test time =   0.02 sec
+Test time =  26.26 sec
 ----------------------------------------------------------
 Test Passed.
-"wrapping_integers_cmp" end time: Oct 02 00:33 UTC
-"wrapping_integers_cmp" time elapsed: 00:00:00
+"compile with optimization" end time: Oct 02 17:19 UTC
+"compile with optimization" time elapsed: 00:00:26
 ----------------------------------------------------------
 
-17/39 Testing: wrapping_integers_wrap
-17/39 Test: wrapping_integers_wrap
-Command: "/media/sf_minnow/build/tests/wrapping_integers_wrap_sanitized"
+38/39 Testing: byte_stream_speed_test
+38/39 Test: byte_stream_speed_test
+Command: "/media/sf_minnow/build/tests/byte_stream_speed_test"
 Directory: /media/sf_minnow/build
-"wrapping_integers_wrap" start time: Oct 02 00:33 UTC
+"byte_stream_speed_test" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
+ByteStream with capacity=32768, write_size=1500, read_size=128 reached 4.61 Gbit/s.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.39 sec
 ----------------------------------------------------------
 Test Passed.
-"wrapping_integers_wrap" end time: Oct 02 00:33 UTC
-"wrapping_integers_wrap" time elapsed: 00:00:00
+"byte_stream_speed_test" end time: Oct 02 17:19 UTC
+"byte_stream_speed_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-18/39 Testing: wrapping_integers_unwrap
-18/39 Test: wrapping_integers_unwrap
-Command: "/media/sf_minnow/build/tests/wrapping_integers_unwrap_sanitized"
+39/39 Testing: reassembler_speed_test
+39/39 Test: reassembler_speed_test
+Command: "/media/sf_minnow/build/tests/reassembler_speed_test"
 Directory: /media/sf_minnow/build
-"wrapping_integers_unwrap" start time: Oct 02 00:33 UTC
+"reassembler_speed_test" start time: Oct 02 17:19 UTC
 Output:
 ----------------------------------------------------------
+Reassembler to ByteStream with capacity=1500 reached 4.05 Gbit/s.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.50 sec
 ----------------------------------------------------------
 Test Passed.
-"wrapping_integers_unwrap" end time: Oct 02 00:33 UTC
-"wrapping_integers_unwrap" time elapsed: 00:00:00
+"reassembler_speed_test" end time: Oct 02 17:19 UTC
+"reassembler_speed_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-19/39 Testing: wrapping_integers_roundtrip
-19/39 Test: wrapping_integers_roundtrip
-Command: "/media/sf_minnow/build/tests/wrapping_integers_roundtrip_sanitized"
-Directory: /media/sf_minnow/build
-"wrapping_integers_roundtrip" start time: Oct 02 00:33 UTC
-Output:
-----------------------------------------------------------
-<end of output>
-Test time =   1.90 sec
-----------------------------------------------------------
-Test Passed.
-"wrapping_integers_roundtrip" end time: Oct 02 00:33 UTC
-"wrapping_integers_roundtrip" time elapsed: 00:00:01
-----------------------------------------------------------
-
-20/39 Testing: wrapping_integers_extra
-20/39 Test: wrapping_integers_extra
-Command: "/media/sf_minnow/build/tests/wrapping_integers_extra_sanitized"
-Directory: /media/sf_minnow/build
-"wrapping_integers_extra" start time: Oct 02 00:33 UTC
-Output:
-----------------------------------------------------------
-<end of output>
-Test time =   0.61 sec
-----------------------------------------------------------
-Test Passed.
-"wrapping_integers_extra" end time: Oct 02 00:33 UTC
-"wrapping_integers_extra" time elapsed: 00:00:00
-----------------------------------------------------------
-
-21/39 Testing: recv_connect
-21/39 Test: recv_connect
-Command: "/media/sf_minnow/build/tests/recv_connect_sanitized"
-Directory: /media/sf_minnow/build
-"recv_connect" start time: Oct 02 00:33 UTC
-Output:
-----------------------------------------------------------
-
-The test [1;39m"[m[1;39mconnect 1[m[1;39m"[m failed after these steps:
-
-  0.	[1;39mInitialized std::pair<std::pair<ByteStream, Reassembler>, TCPReceiver> with capacity=4000[m
-[1;31m  ***** Unsuccessful Expectation: window_size = 4000 *****
-
-[m[1;31mExpectationViolation[m: [1;39mThe object should have had window_size = 4000, but instead it was 0.[m
-
-The test "connect 1" failed.
-<end of output>
-Test time =   0.02 sec
-----------------------------------------------------------
-Test Failed.
-"recv_connect" end time: Oct 02 00:33 UTC
-"recv_connect" time elapsed: 00:00:00
-----------------------------------------------------------
-
-End testing: Oct 02 00:33 UTC
+End testing: Oct 02 17:19 UTC
