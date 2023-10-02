@@ -10,7 +10,6 @@ Wrap32 Wrap32::wrap( uint64_t n, Wrap32 zero_point )
 
 uint64_t Wrap32::unwrap( Wrap32 zero_point, uint64_t checkpoint ) const
 {
-
     /*
         1. Compute offset from ISN
 
@@ -24,15 +23,12 @@ uint64_t Wrap32::unwrap( Wrap32 zero_point, uint64_t checkpoint ) const
 
     [[maybe_unused]] uint64_t nearest_multiple = checkpoint / static_cast<uint64_t>(std::pow(2, 32));
 
-    uint64_t k_minus_1 = (nearest_multiple - 1) * static_cast<uint64_t>(std::pow(2,32)) + offset;
-    uint64_t k = (nearest_multiple) * static_cast<uint64_t>(std::pow(2,32)) + offset;
-    uint64_t k_plus_1 = (nearest_multiple + 1) * static_cast<uint64_t>(std::pow(2,32)) + offset;
-
-    uint64_t nums[3] = {k_minus_1, k, k_plus_1};
+    uint64_t nums[3] = {(nearest_multiple - 1) * static_cast<uint64_t>(std::pow(2,32)) + offset,
+                        (nearest_multiple) * static_cast<uint64_t>(std::pow(2,32)) + offset,
+                        (nearest_multiple + 1) * static_cast<uint64_t>(std::pow(2,32)) + offset};
 
     uint64_t result = 0;
     uint64_t distance = std::numeric_limits<uint64_t>::max();
-
     for(int i = 0; i < 3; i++) {
         uint64_t cur_distance = (checkpoint > nums[i]) ? checkpoint - nums[i] : nums[i] - checkpoint;
         if(cur_distance < distance) {
@@ -42,9 +38,4 @@ uint64_t Wrap32::unwrap( Wrap32 zero_point, uint64_t checkpoint ) const
     }
 
     return result;
-
-  // Your code here.
-  (void)zero_point;
-  (void)checkpoint;
-  return {};
 }
