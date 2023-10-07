@@ -18,40 +18,19 @@ void TCPReceiver::receive( TCPSenderMessage message, Reassembler& reassembler, W
         uint64_t stream_index = seqno.unwrap(isn_, inbound_stream.bytes_pushed()) - 1;
 
         bool is_last_substring = message.FIN;
-        b_fin_recv |= message.FIN;
+        b_fin_recv_ |= message.FIN;
         Buffer payload = message.payload;
 
         reassembler.insert(stream_index, static_cast<std::string&>(payload), is_last_substring, inbound_stream);
-
-
     }
-
-    /*
-        1. If !b_syn_recieved (hence no ISN and no way to properly unwrap seqno in packet), DO NOTHING
-            UNLESS bool SYN set in TCPSenderMessage message
-        2.
-        3.
-        4.
-        5.
-     * */
-
-//  // Your code here.
-//  (void)message;
-//  (void)reassembler;
-//  (void)inbound_stream;
 }
 
 TCPReceiverMessage TCPReceiver::send( const Writer& inbound_stream ) const
 {
   TCPReceiverMessage response;
 
-  response.ackno = (b_syn_recv_) ? std::optional<Wrap32>(Wrap32::wrap(inbound_stream.bytes_pushed() + 1 + (b_fin_recv && inbound_stream.is_closed()), isn_)) : nullopt;
+  response.ackno = (b_syn_recv_) ? std::optional<Wrap32>(Wrap32::wrap(inbound_stream.bytes_pushed() + 1 + (b_fin_recv_ && inbound_stream.is_closed()), isn_)) : nullopt;
   response.window_size = std::min(inbound_stream.available_capacity(), static_cast<uint64_t>(UINT16_MAX));
 
   return response;
-
-
-
-//    (void)inbound_stream;
-//    return {};
 }

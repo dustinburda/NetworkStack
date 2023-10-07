@@ -264,7 +264,7 @@ util/CMakeFiles/util_debug.dir/tcp_minnow_socket.cc.o: \
  /media/sf_minnow/util/tcp_receiver_message.hh \
  /media/sf_minnow/util/tcp_sender_message.hh \
  /media/sf_minnow/util/tcp_segment.hh /media/sf_minnow/util/udinfo.hh \
- /media/sf_minnow/src/tcp_sender.hh \
+ /media/sf_minnow/src/tcp_sender.hh /media/sf_minnow/src/Timer.h \
  /media/sf_minnow/util/tuntap_adapter.hh \
  /media/sf_minnow/util/tcp_over_ip.hh /media/sf_minnow/util/fd_adapter.hh \
  /media/sf_minnow/util/lossy_fd_adapter.hh \

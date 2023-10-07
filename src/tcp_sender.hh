@@ -3,11 +3,13 @@
 #include "byte_stream.hh"
 #include "tcp_receiver_message.hh"
 #include "tcp_sender_message.hh"
+#include "Timer.h"
 
 class TCPSender
 {
   Wrap32 isn_;
   uint64_t initial_RTO_ms_;
+  Timer t;
 
 public:
   /* Construct TCP sender with given default Retransmission Timeout and possible ISN */
