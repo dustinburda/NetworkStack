@@ -4,12 +4,41 @@
 #include "tcp_receiver_message.hh"
 #include "tcp_sender_message.hh"
 #include "Timer.h"
+#include <deque>
 
 class TCPSender
 {
   Wrap32 isn_;
   uint64_t initial_RTO_ms_;
+  uint64_t current_RTO_ms_;
+
   Timer t;
+
+  std::optional<Wrap32> ackno_; //TODO: reason about initial value
+  uint16_t window_size_; //TODO: reason about initial value
+
+
+
+  struct OutSeg {
+      TCPSenderMessage tcp_message_;
+      uint64_t timestamp_;
+  };
+  std::deque<TCPSenderMessage> pushed_segments_;
+  std::deque<OutSeg> segments_in_flight_;
+
+  uint64_t time_alive_;
+
+  uint64_t num_consecutive_retransmissions_;
+
+  bool b_syn_sent_;
+  bool b_fin_sent_;
+
+
+  uint64_t absolute_seqno_;
+
+  bool b_retransmit_;
+
+
 
 public:
   /* Construct TCP sender with given default Retransmission Timeout and possible ISN */
