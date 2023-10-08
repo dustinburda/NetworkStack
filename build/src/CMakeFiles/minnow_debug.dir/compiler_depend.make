@@ -2006,7 +2006,13 @@ src/CMakeFiles/minnow_debug.dir/tcp_sender.cc.o: /media/sf_minnow/src/tcp_sender
   /usr/include/c++/12/bits/random.tcc \
   /usr/include/c++/12/numeric \
   /usr/include/c++/12/bits/stl_numeric.h \
-  /usr/include/c++/12/pstl/glue_numeric_defs.h
+  /usr/include/c++/12/pstl/glue_numeric_defs.h \
+  /usr/include/c++/12/algorithm \
+  /usr/include/c++/12/bits/stl_algo.h \
+  /usr/include/c++/12/bits/algorithmfwd.h \
+  /usr/include/c++/12/bits/ranges_algo.h \
+  /usr/include/c++/12/bits/ranges_util.h \
+  /usr/include/c++/12/pstl/glue_algorithm_defs.h
 
 src/CMakeFiles/minnow_debug.dir/wrapping_integers.cc.o: /media/sf_minnow/src/wrapping_integers.cc \
   /usr/include/stdc-predef.h \
