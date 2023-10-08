@@ -326,11 +326,14 @@ tests/CMakeFiles/send_close_sanitized.dir/send_close.cc.o: /media/sf_minnow/test
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
   /media/sf_minnow/util/tcp_sender_message.hh \
+  /media/sf_minnow/src/Timer.h \
   /usr/include/c++/12/sstream \
   /usr/include/c++/12/bits/sstream.tcc
 
 
 /usr/include/c++/12/bits/sstream.tcc:
+
+/media/sf_minnow/src/Timer.h:
 
 /media/sf_minnow/util/tcp_sender_message.hh:
 
