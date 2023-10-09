@@ -3,6 +3,7 @@
 #include "address.hh"
 #include "ethernet_frame.hh"
 #include "ipv4_datagram.hh"
+#include "arp_message.hh"
 
 #include <iostream>
 #include <list>
@@ -12,6 +13,8 @@
 #include <utility>
 #include <set>
 #include <deque>
+#include <string>
+#include <vector>
 
 // A "network interface" that connects IP (the internet layer, or network layer)
 // with Ethernet (the network access layer, or link layer).
@@ -52,7 +55,6 @@ private:
       uint64_t expiration_time;
       std::unordered_map<uint32_t, EthernetAddress>::iterator it;
   };
-
   std::set<MapTimeEntry> time_entries_;  //
 
   std::deque<InternetDatagram> datagram_q_;
