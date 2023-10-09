@@ -16,6 +16,15 @@
 #include <string>
 #include <vector>
 
+struct MapTimeEntry {
+    uint64_t expiration_time;
+    std::unordered_map<uint32_t, EthernetAddress>::iterator it;
+
+    bool operator<(const MapTimeEntry& m) const {
+        return expiration_time < m.expiration_time;
+    }
+};
+
 // A "network interface" that connects IP (the internet layer, or network layer)
 // with Ethernet (the network access layer, or link layer).
 
@@ -51,13 +60,9 @@ private:
   //ipv4_numeric() returns raw uint32_t value from Address object
   std::unordered_map<uint32_t, EthernetAddress> ip_eth_map_;
 
-  struct MapTimeEntry {
-      uint64_t expiration_time;
-      std::unordered_map<uint32_t, EthernetAddress>::iterator it;
-  };
-  std::set<MapTimeEntry> time_entries_;  //
+  std::set<MapTimeEntry> time_entries_;
 
-  std::deque<InternetDatagram> datagram_q_;
+  std::unordered_map<uint32_t, std::vector<InternetDatagram>> datagram_qs_;
 
   std::unordered_map<uint32_t, uint64_t> arp_request_times_; //don't send another ARP request for IP address within 5 seconds of prev. one
 

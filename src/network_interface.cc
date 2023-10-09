@@ -20,7 +20,7 @@ EthernetFrame frame_create( const EthernetAddress& src,
 // ip_address: IP (what ARP calls "protocol") address of the interface
 NetworkInterface::NetworkInterface( const EthernetAddress& ethernet_address, const Address& ip_address )
   : ethernet_address_( ethernet_address ), ip_address_( ip_address ), time_alive_{0}, ip_eth_map_ {}, time_entries_{},
-  datagram_q_{}, arp_request_times_{}, ethernet_q_{}
+  datagram_qs_{}, arp_request_times_{}, ethernet_q_{}
 {
   cerr << "DEBUG: Network interface has Ethernet address " << to_string( ethernet_address_ ) << " and IP address "
        << ip_address.ip() << "\n";
@@ -35,19 +35,19 @@ NetworkInterface::NetworkInterface( const EthernetAddress& ethernet_address, con
 void NetworkInterface::send_datagram( const InternetDatagram& dgram, const Address& next_hop )
 {
     uint32_t next_hop_addr = next_hop.ipv4_numeric();
-    uint32_t dgram_src_addr = dgram.header.src;
+    [[maybe_unused]] uint32_t dgram_src_addr = dgram.header.src;
     if(ip_eth_map_.find(next_hop_addr) != ip_eth_map_.end()) {
         EthernetAddress dst = ip_eth_map_[next_hop_addr];
         auto eth_frame = frame_create(ethernet_address_, dst, EthernetHeader::TYPE_IPv4, serialize(dgram));
         ethernet_q_.push_back(eth_frame);
     } else{
-        if(arp_request_times_.find(dgram_src_addr) == arp_request_times_.end() ||  arp_request_times_[dgram_src_addr] - time_alive_ > 5) {
+        if(arp_request_times_.find(next_hop_addr) == arp_request_times_.end() ||  time_alive_ - arp_request_times_[next_hop_addr] > 5) {
             auto arp_message = arp_create(ARPMessage::OPCODE_REQUEST, ethernet_address_, ip_address_.to_string(), ETHERNET_BROADCAST, next_hop.to_string());
-            auto eth_frame = frame_create(ethernet_address_, ETHERNET_BROADCAST, EthernetHeader::TYPE_ARP, serialize(arp_message));
-            ethernet_q_.push_back(eth_frame);
+            auto arp_eth_frame = frame_create(ethernet_address_, ETHERNET_BROADCAST, EthernetHeader::TYPE_ARP, serialize(arp_message));
+            ethernet_q_.push_back(arp_eth_frame);
 
-            datagram_q_.push_back(dgram);
-            arp_request_times_[dgram_src_addr] = time_alive_;
+            datagram_qs_[next_hop_addr].push_back(dgram);
+            arp_request_times_[next_hop_addr] = time_alive_;
         }
     }
 }
@@ -56,9 +56,21 @@ void NetworkInterface::send_datagram( const InternetDatagram& dgram, const Addre
 optional<InternetDatagram> NetworkInterface::recv_frame( const EthernetFrame& frame )
 {
 
-    // when ARP reply is recieved for some datagram in datagram_deque, remove it and send ethernet frame
-  (void)frame;
-  return {};
+    std::optional<InternetDatagram> ret = nullopt;
+    if(frame.header.dst != ethernet_address_) {
+        return ret;
+    }
+
+   if(frame.header.type == EthernetHeader::TYPE_IPv4) {
+        // send immediately
+   }
+
+   if(frame.header.type == EthernetHeader::TYPE_ARP) {
+       // learn mapping
+       // if arp request, send arp reply
+       // for mapping, send out all datagrams with reply dst ip address
+   }
+  return ret;
 }
 
 // ms_since_last_tick: the number of milliseconds since the last call to this method
@@ -68,7 +80,7 @@ void NetworkInterface::tick( const size_t ms_since_last_tick )
     while(!time_entries_.empty()) {
         auto time_entry = time_entries_.begin();
 
-        if(time_entry->expiration_time <= time_alive_ + 30) {
+        if(time_entry->expiration_time <= time_alive_) {
             ip_eth_map_.erase(time_entry->it);
             time_entries_.erase(time_entry);
         } else {
@@ -86,18 +98,6 @@ optional<EthernetFrame> NetworkInterface::maybe_send()
     }
     return ret;
 }
-
-//
-//InternetDatagram datagram_create( const std::string& src_ip, const std::string& dst_ip ) // NOLINT(*-swappable-*)
-//{
-//    InternetDatagram dgram;
-//    dgram.header.src = Address( src_ip, 0 ).ipv4_numeric();
-//    dgram.header.dst = Address( dst_ip, 0 ).ipv4_numeric();
-//    dgram.payload.emplace_back( "hello" );
-//    dgram.header.len = static_cast<uint64_t>( dgram.header.hlen ) * 4 + dgram.payload.front().size();
-//    dgram.header.compute_checksum();
-//    return dgram;
-//}
 
 ARPMessage arp_create( const uint16_t opcode,
                               const EthernetAddress sender_ethernet_address,
