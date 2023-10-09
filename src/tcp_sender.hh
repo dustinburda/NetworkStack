@@ -14,10 +14,8 @@ class TCPSender
 
   Timer t;
 
-  std::optional<Wrap32> ackno_; //TODO: reason about initial value
-  uint16_t window_size_; //TODO: reason about initial value
-
-
+  std::optional<Wrap32> ackno_;
+  uint16_t window_size_;
 
   struct OutSeg {
       TCPSenderMessage tcp_message_;
@@ -38,6 +36,7 @@ class TCPSender
 
   bool b_retransmit_;
 
+  bool dont_back_off_rto_;
 
 
 public:
