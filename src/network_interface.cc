@@ -5,10 +5,22 @@
 
 using namespace std;
 
+InternetDatagram make_datagram( const string& src_ip, const string& dst_ip );
+ARPMessage make_arp( const uint16_t opcode,
+                     const EthernetAddress sender_ethernet_address,
+                     const string& sender_ip_address,
+                     const EthernetAddress target_ethernet_address,
+                     const string& target_ip_address );
+EthernetFrame make_frame( const EthernetAddress& src,
+                          const EthernetAddress& dst,
+                          const uint16_t type,
+                          vector<Buffer> payload );
+
 // ethernet_address: Ethernet (what ARP calls "hardware") address of the interface
 // ip_address: IP (what ARP calls "protocol") address of the interface
 NetworkInterface::NetworkInterface( const EthernetAddress& ethernet_address, const Address& ip_address )
-  : ethernet_address_( ethernet_address ), ip_address_( ip_address )
+  : ethernet_address_( ethernet_address ), ip_address_( ip_address ), time_alive_{0}, ip_eth_map_ {}, time_entries_{},
+  datagram_q_{}, arp_request_times_{}, ethernet_q_{}
 {
   cerr << "DEBUG: Network interface has Ethernet address " << to_string( ethernet_address_ ) << " and IP address "
        << ip_address.ip() << "\n";

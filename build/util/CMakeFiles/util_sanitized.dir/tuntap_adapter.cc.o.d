@@ -246,8 +246,10 @@ util/CMakeFiles/util_sanitized.dir/tuntap_adapter.cc.o: \
  /usr/include/c++/12/bits/hashtable_policy.h \
  /usr/include/c++/12/bits/node_handle.h \
  /usr/include/c++/12/bits/unordered_map.h \
- /usr/include/c++/12/bits/erase_if.h /media/sf_minnow/util/tcp_over_ip.hh \
- /media/sf_minnow/util/fd_adapter.hh \
+ /usr/include/c++/12/bits/erase_if.h /usr/include/c++/12/set \
+ /usr/include/c++/12/bits/stl_tree.h /usr/include/c++/12/bits/stl_set.h \
+ /usr/include/c++/12/bits/stl_multiset.h \
+ /media/sf_minnow/util/tcp_over_ip.hh /media/sf_minnow/util/fd_adapter.hh \
  /media/sf_minnow/util/file_descriptor.hh \
  /media/sf_minnow/util/lossy_fd_adapter.hh \
  /media/sf_minnow/util/random.hh /usr/include/c++/12/random \

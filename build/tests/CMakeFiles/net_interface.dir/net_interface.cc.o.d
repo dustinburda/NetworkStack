@@ -250,7 +250,9 @@ tests/CMakeFiles/net_interface.dir/net_interface.cc.o: \
  /usr/include/c++/12/bits/hashtable_policy.h \
  /usr/include/c++/12/bits/node_handle.h \
  /usr/include/c++/12/bits/unordered_map.h \
- /usr/include/c++/12/bits/erase_if.h /usr/include/c++/12/random \
+ /usr/include/c++/12/bits/erase_if.h /usr/include/c++/12/set \
+ /usr/include/c++/12/bits/stl_tree.h /usr/include/c++/12/bits/stl_set.h \
+ /usr/include/c++/12/bits/stl_multiset.h /usr/include/c++/12/random \
  /usr/include/c++/12/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
