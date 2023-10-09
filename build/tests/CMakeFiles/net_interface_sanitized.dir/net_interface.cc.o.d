@@ -217,7 +217,8 @@ tests/CMakeFiles/net_interface_sanitized.dir/net_interface.cc.o: \
  /usr/include/c++/12/bits/enable_special_members.h \
  /usr/include/c++/12/utility /usr/include/c++/12/bits/stl_relops.h \
  /media/sf_minnow/tests/common.hh /media/sf_minnow/tests/conversions.hh \
- /media/sf_minnow/src/wrapping_integers.hh \
+ /media/sf_minnow/src/wrapping_integers.hh /usr/include/c++/12/iostream \
+ /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc \
  /media/sf_minnow/util/exception.hh /usr/include/c++/12/cxxabi.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/cxxabi_tweaks.h \
  /media/sf_minnow/src/network_interface.hh \
@@ -242,12 +243,10 @@ tests/CMakeFiles/net_interface_sanitized.dir/net_interface.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
  /usr/include/x86_64-linux-gnu/bits/netdb.h \
- /media/sf_minnow/util/ethernet_frame.hh /usr/include/c++/12/iostream \
- /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc \
- /usr/include/c++/12/list /usr/include/c++/12/bits/stl_list.h \
- /usr/include/c++/12/bits/list.tcc /usr/include/c++/12/queue \
- /usr/include/c++/12/bits/stl_queue.h /usr/include/c++/12/unordered_map \
- /usr/include/c++/12/bits/hashtable.h \
+ /media/sf_minnow/util/ethernet_frame.hh /usr/include/c++/12/list \
+ /usr/include/c++/12/bits/stl_list.h /usr/include/c++/12/bits/list.tcc \
+ /usr/include/c++/12/queue /usr/include/c++/12/bits/stl_queue.h \
+ /usr/include/c++/12/unordered_map /usr/include/c++/12/bits/hashtable.h \
  /usr/include/c++/12/bits/hashtable_policy.h \
  /usr/include/c++/12/bits/node_handle.h \
  /usr/include/c++/12/bits/unordered_map.h \

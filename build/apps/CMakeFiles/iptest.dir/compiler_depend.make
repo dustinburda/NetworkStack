@@ -268,18 +268,16 @@ apps/CMakeFiles/iptest.dir/iptest.cc.o: /media/sf_minnow/apps/iptest.cc \
   /media/sf_minnow/util/tcp_segment.hh \
   /media/sf_minnow/util/tcp_receiver_message.hh \
   /media/sf_minnow/src/wrapping_integers.hh \
+  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/istream \
+  /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/optional \
   /usr/include/c++/12/bits/enable_special_members.h \
   /media/sf_minnow/util/tcp_sender_message.hh \
   /media/sf_minnow/util/udinfo.hh \
   /media/sf_minnow/util/tun.hh \
-  /media/sf_minnow/util/file_descriptor.hh \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc
+  /media/sf_minnow/util/file_descriptor.hh
 
-
-/usr/include/c++/12/istream:
 
 /media/sf_minnow/util/file_descriptor.hh:
 
@@ -290,6 +288,8 @@ apps/CMakeFiles/iptest.dir/iptest.cc.o: /media/sf_minnow/apps/iptest.cc \
 /usr/include/c++/12/bits/enable_special_members.h:
 
 /usr/include/c++/12/optional:
+
+/usr/include/c++/12/istream:
 
 /media/sf_minnow/src/wrapping_integers.hh:
 

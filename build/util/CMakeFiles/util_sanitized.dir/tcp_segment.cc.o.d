@@ -211,7 +211,9 @@ util/CMakeFiles/util_sanitized.dir/tcp_segment.cc.o: \
  /usr/include/c++/12/bits/stl_bvector.h \
  /usr/include/c++/12/bits/vector.tcc \
  /media/sf_minnow/util/tcp_receiver_message.hh \
- /media/sf_minnow/src/wrapping_integers.hh /usr/include/c++/12/optional \
+ /media/sf_minnow/src/wrapping_integers.hh /usr/include/c++/12/iostream \
+ /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc \
+ /usr/include/c++/12/optional \
  /usr/include/c++/12/bits/enable_special_members.h \
  /media/sf_minnow/util/tcp_sender_message.hh \
  /media/sf_minnow/util/udinfo.hh /media/sf_minnow/util/checksum.hh

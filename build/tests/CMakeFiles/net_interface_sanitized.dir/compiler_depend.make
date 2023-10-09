@@ -275,6 +275,9 @@ tests/CMakeFiles/net_interface_sanitized.dir/net_interface.cc.o: /media/sf_minno
   /media/sf_minnow/tests/common.hh \
   /media/sf_minnow/tests/conversions.hh \
   /media/sf_minnow/src/wrapping_integers.hh \
+  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/istream \
+  /usr/include/c++/12/bits/istream.tcc \
   /media/sf_minnow/util/exception.hh \
   /usr/include/c++/12/cxxabi.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/cxxabi_tweaks.h \
@@ -305,9 +308,6 @@ tests/CMakeFiles/net_interface_sanitized.dir/net_interface.cc.o: /media/sf_minno
   /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
   /usr/include/x86_64-linux-gnu/bits/netdb.h \
   /media/sf_minnow/util/ethernet_frame.hh \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/list \
   /usr/include/c++/12/bits/stl_list.h \
   /usr/include/c++/12/bits/list.tcc \
@@ -399,8 +399,6 @@ tests/CMakeFiles/net_interface_sanitized.dir/net_interface.cc.o: /media/sf_minno
 
 /usr/include/c++/12/list:
 
-/usr/include/c++/12/istream:
-
 /media/sf_minnow/util/ethernet_frame.hh:
 
 /usr/include/x86_64-linux-gnu/bits/netdb.h:
@@ -438,6 +436,8 @@ tests/CMakeFiles/net_interface_sanitized.dir/net_interface.cc.o: /media/sf_minno
 /usr/include/c++/12/cxxabi.h:
 
 /media/sf_minnow/util/exception.hh:
+
+/usr/include/c++/12/istream:
 
 /media/sf_minnow/src/wrapping_integers.hh:
 

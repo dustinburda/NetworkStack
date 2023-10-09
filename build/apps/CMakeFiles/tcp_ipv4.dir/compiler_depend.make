@@ -289,6 +289,9 @@ apps/CMakeFiles/tcp_ipv4.dir/tcp_ipv4.cc.o: /media/sf_minnow/apps/tcp_ipv4.cc \
   /usr/include/c++/12/bits/uniform_int_dist.h \
   /media/sf_minnow/util/tcp_config.hh \
   /media/sf_minnow/src/wrapping_integers.hh \
+  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/istream \
+  /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/optional \
   /media/sf_minnow/util/tcp_minnow_socket.hh \
   /media/sf_minnow/src/byte_stream.hh \
@@ -297,9 +300,6 @@ apps/CMakeFiles/tcp_ipv4.dir/tcp_ipv4.cc.o: /media/sf_minnow/apps/tcp_ipv4.cc \
   /usr/include/c++/12/bits/stl_deque.h \
   /usr/include/c++/12/bits/deque.tcc \
   /usr/include/c++/12/bits/stl_queue.h \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc \
   /media/sf_minnow/util/eventloop.hh \
   /usr/include/c++/12/list \
   /usr/include/c++/12/bits/stl_list.h \
@@ -519,11 +519,11 @@ apps/CMakeFiles/tcp_ipv4.dir/tcp_ipv4.cc.o: /media/sf_minnow/apps/tcp_ipv4.cc \
 
 /media/sf_minnow/util/eventloop.hh:
 
-/usr/include/c++/12/istream:
-
 /usr/include/c++/12/bits/deque.tcc:
 
 /usr/include/c++/12/optional:
+
+/usr/include/c++/12/istream:
 
 /media/sf_minnow/src/wrapping_integers.hh:
 
