@@ -296,6 +296,7 @@ tests/CMakeFiles/router_sanitized.dir/router.cc.o: /media/sf_minnow/tests/router
   /usr/include/c++/12/bits/vector.tcc \
   /media/sf_minnow/util/ipv4_datagram.hh \
   /media/sf_minnow/util/ipv4_header.hh \
+  /media/sf_minnow/util/arp_message.hh \
   /usr/include/c++/12/iostream \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
@@ -316,7 +317,6 @@ tests/CMakeFiles/router_sanitized.dir/router.cc.o: /media/sf_minnow/tests/router
   /usr/include/c++/12/bits/stl_tree.h \
   /usr/include/c++/12/bits/stl_set.h \
   /usr/include/c++/12/bits/stl_multiset.h \
-  /media/sf_minnow/util/arp_message.hh \
   /media/sf_minnow/tests/network_interface_test_harness.hh \
   /media/sf_minnow/tests/common.hh \
   /media/sf_minnow/tests/conversions.hh \

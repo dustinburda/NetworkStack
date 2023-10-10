@@ -41,12 +41,13 @@ void NetworkInterface::send_datagram( const InternetDatagram& dgram, const Addre
         auto eth_frame = frame_create(ethernet_address_, dst, EthernetHeader::TYPE_IPv4, serialize(dgram));
         ethernet_q_.push_back(eth_frame);
     } else{
-        if(arp_request_times_.find(next_hop_addr) == arp_request_times_.end() ||  time_alive_ - arp_request_times_[next_hop_addr] > 5) {
-            auto arp_message = arp_create(ARPMessage::OPCODE_REQUEST, ethernet_address_, ip_address_.to_string(), ETHERNET_BROADCAST, next_hop.to_string());
+        datagram_qs_[next_hop_addr].push_back(dgram);
+        if(arp_request_times_.find(next_hop_addr) == arp_request_times_.end() ||  time_alive_ - arp_request_times_[next_hop_addr] > 5000) {
+            auto arp_message = arp_create(ARPMessage::OPCODE_REQUEST, ethernet_address_, std::to_string(ip_address_.ipv4_numeric()),
+                                          {}, std::to_string(next_hop.ipv4_numeric()));
             auto arp_eth_frame = frame_create(ethernet_address_, ETHERNET_BROADCAST, EthernetHeader::TYPE_ARP, serialize(arp_message));
             ethernet_q_.push_back(arp_eth_frame);
 
-            datagram_qs_[next_hop_addr].push_back(dgram);
             arp_request_times_[next_hop_addr] = time_alive_;
         }
     }
@@ -57,18 +58,59 @@ optional<InternetDatagram> NetworkInterface::recv_frame( const EthernetFrame& fr
 {
 
     std::optional<InternetDatagram> ret = nullopt;
-    if(frame.header.dst != ethernet_address_) {
+
+
+    if(frame.header.dst != ethernet_address_ && frame.header.dst != ETHERNET_BROADCAST) {
         return ret;
     }
 
+
    if(frame.header.type == EthernetHeader::TYPE_IPv4) {
         // send immediately
+        InternetDatagram dgram;
+        bool parse_success = parse(dgram, frame.payload);
+        if(parse_success)
+            ret = dgram;
+
+        return ret;
    }
 
    if(frame.header.type == EthernetHeader::TYPE_ARP) {
-       // learn mapping
-       // if arp request, send arp reply
-       // for mapping, send out all datagrams with reply dst ip address
+       ARPMessage arp_msg;
+       bool parse_success = parse(arp_msg, frame.payload);
+       if(parse_success) {
+           // learn mapping from both request and reply
+            ip_eth_map_[arp_msg.sender_ip_address] = arp_msg.sender_ethernet_address;
+
+            MapTimeEntry mte;
+            mte.expiration_time = time_alive_ + 30000;
+            mte.it = ip_eth_map_.find(arp_msg.sender_ip_address);
+
+            time_entries_.insert(mte);
+
+            // send out all datagrams to sender ip address and sender ethernet address
+            for(auto& dgram : datagram_qs_[arp_msg.sender_ip_address]) {
+                auto eth_frame = frame_create(ethernet_address_, arp_msg.sender_ethernet_address, EthernetHeader::TYPE_IPv4, serialize(dgram));
+                ethernet_q_.push_back(eth_frame);
+            }
+            datagram_qs_[arp_msg.sender_ip_address].clear();
+
+            arp_request_times_.erase(arp_msg.sender_ip_address);
+
+           if(arp_msg.opcode == ARPMessage::OPCODE_REQUEST) {
+               if(arp_msg.target_ip_address != ip_address_.ipv4_numeric())
+                   return ret;
+                ARPMessage arp_reply = arp_create(ARPMessage::OPCODE_REPLY, ethernet_address_, std::to_string(ip_address_.ipv4_numeric()), arp_msg.sender_ethernet_address, to_string(arp_msg.sender_ip_address));
+               auto eth_frame = frame_create(ethernet_address_, arp_msg.sender_ethernet_address, EthernetHeader::TYPE_ARP, serialize(arp_reply));
+               ethernet_q_.push_back(eth_frame);
+           }
+           if(arp_msg.opcode == ARPMessage::OPCODE_REPLY) {
+               // nothing for now
+           }
+       }
+
+
+       // for mapping,
    }
   return ret;
 }

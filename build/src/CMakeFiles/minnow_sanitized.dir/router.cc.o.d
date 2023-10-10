@@ -235,7 +235,8 @@ src/CMakeFiles/minnow_sanitized.dir/router.cc.o: \
  /usr/include/c++/12/bits/stl_bvector.h \
  /usr/include/c++/12/bits/vector.tcc \
  /media/sf_minnow/util/ipv4_datagram.hh \
- /media/sf_minnow/util/ipv4_header.hh /usr/include/c++/12/iostream \
+ /media/sf_minnow/util/ipv4_header.hh \
+ /media/sf_minnow/util/arp_message.hh /usr/include/c++/12/iostream \
  /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc \
  /usr/include/c++/12/list /usr/include/c++/12/bits/stl_list.h \
  /usr/include/c++/12/bits/list.tcc /usr/include/c++/12/optional \
