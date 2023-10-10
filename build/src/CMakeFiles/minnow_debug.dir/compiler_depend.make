@@ -1413,7 +1413,10 @@ src/CMakeFiles/minnow_debug.dir/router.cc.o: /media/sf_minnow/src/router.cc \
   /usr/include/c++/12/set \
   /usr/include/c++/12/bits/stl_tree.h \
   /usr/include/c++/12/bits/stl_set.h \
-  /usr/include/c++/12/bits/stl_multiset.h
+  /usr/include/c++/12/bits/stl_multiset.h \
+  /usr/include/c++/12/map \
+  /usr/include/c++/12/bits/stl_map.h \
+  /usr/include/c++/12/bits/stl_multimap.h
 
 src/CMakeFiles/minnow_debug.dir/tcp_receiver.cc.o: /media/sf_minnow/src/tcp_receiver.cc \
   /usr/include/stdc-predef.h \

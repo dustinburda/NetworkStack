@@ -20,10 +20,24 @@ void Router::add_route( const uint32_t route_prefix,
        << static_cast<int>( prefix_length ) << " => " << ( next_hop.has_value() ? next_hop->ip() : "(direct)" )
        << " on interface " << interface_num << "\n";
 
-  (void)route_prefix;
-  (void)prefix_length;
-  (void)next_hop;
-  (void)interface_num;
+  routing_table_[{route_prefix, prefix_length}] = {next_hop, interface_num};
 }
 
-void Router::route() {}
+void Router::route() {
+
+    for(auto& async_network : interfaces_) {
+
+        while( auto dgram_recv = async_network.maybe_receive()) {
+
+            [[maybe_unused]] uint8_t max_length_match = 0;
+            [[maybe_unused]] bool route_matches = false;
+
+//            for(auto& it : routing_table_) {
+//
+////                auto route_prefix =
+//
+//            }
+
+        }
+    }
+}

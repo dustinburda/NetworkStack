@@ -4,6 +4,7 @@
 
 #include <optional>
 #include <queue>
+#include <map>
 
 // A wrapper for NetworkInterface that makes the host-side
 // interface asynchronous: instead of returning received datagrams
@@ -54,6 +55,7 @@ class Router
 {
   // The router's collection of network interfaces
   std::vector<AsyncNetworkInterface> interfaces_ {};
+  std::map< std::pair<uint32_t, uint8_t>, std::pair<std::optional<Address>, size_t> > routing_table_ {};
 
 public:
   // Add an interface to the router
