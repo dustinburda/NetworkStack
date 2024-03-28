@@ -1,0 +1,140 @@
+Network Interface Notes
+
+- send_datagram
+	- Used to sent outbound IP datagram to next hop. Job of network interface to translate this datagram into 	  an Ethernet frame and (eventually send it)
+	
+`	- If destination Ethernet Address is known
+		-  Send it right away
+		- Create an ethernet frame (w/ type EthernetHeader::TYPE_IPv4),  set payload to be serialized datagram, and set source and destination address
+	- If address is unknown
+		- broadcast ARP request for next hop's Ethernet address and queue the IP datagram so it can be 
+		sent after ARP reply is recieved
+		-if network interface already sent ARP request for same IP address in last 5 seconds, 
+		don't send another request, just wait for reply to the first one --> queue the datagram 
+		until you learn destintion Ethernet address)
+
+- recv_frame
+	- Called when an Ethernet frame arrives from the network. Code should ignore any frames not destined for 
+	the network interface (destination is not Ethernet broadcast address or own ethernet address)
+	
+	- If inbound frame is IPv4
+		- parse the payload as an InternetDataframe
+		- if successful --> (meaning parse() returns true) return the resulting InternetDatagram 
+		  to the caller
+	- If the inbound frame is ARP
+		- parse the payload as an ARPMessage.
+		- If successful --> learn mapping from sender IP address and Ethernet address for 30 seconds 
+			(learn mappings from both request and replies)
+		- If ARP request asking for our IP address, send appropriate reply
+
+- maybe_send 
+	- This is NetworkInterface's oppurtunity to actually send EthernetFrame 
+
+- tick
+	- This is called as time passes, Expire any IP-to-Ethernet mappings have expired
+
+
+
+uint64_t time_alive_
+
+std::unordered_map<Address, EthernetAddress> mapping_;
+	struct MapTimeEntry {
+		uint64_t timestamp; //for expiration time
+		std::unordered_map<IPAddress, EthernetAddress>::iterator it;
+	}
+
+std::set<MapTimeEntry> time_entries_;
+
+std::queue<InternetDatagram>  datagram_q_;
+
+std::unordered_map<IPAddress, uint64_t> arp_request_time_; 
+
+std::deque<EthernetFrame> ethernet_q_;
+
+
+EthernetFrame:
+	EthernetHeader
+	std::vector<Buffer> payload
+
+EthernetHeader:
+	EthernetAddress src
+	EthernetAddress dest
+	uint16_t type
+
+IPv4Datagram:
+	IPv4Header
+	std::vector<Buffer> payload
+
+IPv4Header:
+	uint8_t ver = 4;           // IP version
+	uint8_t hlen = LENGTH / 4; // header length (multiples of 32 bits)
+	uint8_t tos = 0;           // type of service
+	uint16_t len = 0;          // total length of packet
+	uint16_t id = 0;           // identification number
+	bool df = true;            // don't fragment flag
+	bool mf = false;           // more fragments flag
+	uint16_t offset = 0;       // fragment offset field
+	uint8_t ttl = DEFAULT_TTL; // time to live field
+	uint8_t proto = PROTO_TCP; // protocol field
+	uint16_t cksum = 0;        // checksum field
+	uint32_t src = 0;          // src address
+	uint32_t dst = 0;          // dst address
+
+InternetDatagram make_datagram( const string& src_ip, const string& dst_ip );
+ARPMessage make_arp( const uint16_t opcode,
+                     const EthernetAddress sender_ethernet_address,
+                     const string& sender_ip_address,
+                     const EthernetAddress target_ethernet_address,
+                     const string& target_ip_address );
+EthernetFrame make_frame( const EthernetAddress& src,
+                          const EthernetAddress& dst,
+                          const uint16_t type,
+                          vector<Buffer> payload );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

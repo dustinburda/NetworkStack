@@ -110,16 +110,16 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
-			"id" : "stream_copy::@9e189ee61a034fc9b705"
-		},
-		{
 			"backtrace" : 5,
 			"id" : "util_debug::@5865449b717dd869d2cd"
 		},
 		{
 			"backtrace" : 4,
 			"id" : "minnow_debug::@145eef247bfb46b6828c"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "stream_copy::@9e189ee61a034fc9b705"
 		}
 	],
 	"id" : "tcp_ipv4::@9e189ee61a034fc9b705",

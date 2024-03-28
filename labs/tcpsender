@@ -1,0 +1,129 @@
+TCPSender's Responsibility:
+	- Keep track of reciever's window (reciever's ackno + window size_)  DONE
+
+		Wrap32 ackno_;
+        	uint16_t window_size_;
+
+	- Fill window when possible (read from ByteStream and create new TCP segments (w/ SYN | FYN if needed), keep sending 
+	  segments until window is full or outbound ByteStream has nothing more to send.                      DONE
+		
+
+	- Keep track of outstanding segments ( std::deqeue<OutSeg>) until sequence numbers they occupy has been fully ack'd    DONE
+
+
+		(CONSIDER GOING BACK TO SINGLE QUEUE)
+		 std::deqeue<TCPSenderMessage> pushed_segments_;
+		 std::deque<OutSeg> segments_in_flight_; 
+
+	- Resend outstanding segments if enough time passes                  DONE
+		 struct OutSeg {
+                	TCPSenderMessage tcp_message_;
+			uint64_t timestamp_;
+        	};	
+
+			
+"Outstanding too long" Logic:
+	
+	- Every tick call, update total number of milliseconds TCPSender has been alive   DONE
+		size_t time_alive_;
+	
+	- When TCPSender is constructed, argument given for retransmission timeout (RTO)  DONE
+		initial_RTO_ms_ (given by code)
+		current_RTO_ms_ (created by me)	
+
+	- Need retransmission timer, where time passing occurs when tick method is called (started at certain time, expires after current_retransmission_timeout_)    DONE
+			Timer t	
+
+	- Every time segment with data is sent (push or maybe_send?), if timer not running --> START TIMER w/current_retransmission_timeout_  DONE
+	
+	-  When all outstanding data ack'd --> STOP TIMER    DONE
+		
+	- If ticked called and TIMER EXPIRED -->                                      DONE
+		- Retransmit earliest segment not fully ack'd (front of deque)
+		-  If window size non zero:
+			Keep track of number of consecutive retransmissions and increment if something just retransmitted 
+				
+				num_retransmissions_
+
+
+			Double value of current_retransmission_timeout_
+		- RESET TIMER w/current_retransmission_timeout_ (taking into account may have doubled it)
+	
+	- When sender gets ackno of NEW data -->                                                           DONE
+		- Set current_retransmission_timeout_ = initial_retransmission_timeout_
+		- If sender has any outstanding data, RESTART TIMER w/ current_retransmission_timout_
+		- Reset count of consecutive retransmissions back to zero, num_retransmissions_ = 0;
+
+		(Obviously pop fully ack'd segments off deque out_segs_)
+
+	
+		bool b_timer_running_;
+		uint64_t start_time_;
+		
+		(This or make a proper Timer Class)
+
+
+TCPSender Implementation:
+
+	- push
+		- TCPSender fills the window from outbound bytestream and generate as many segments as possible (as long as space available in window and bytes to be read) with each segment being as big as possible (but not bigger than TCPConfig::MAX_PAYLOAD_SIZE)
+	
+	- maybe_send
+		- TCPSender's oppurtunity to actually send TCPSenderMessage if it wants to
+
+	- recieve
+		- Message from reciever conveying new ackno, window size --> left = ackno, right = ackno + window size
+		- TCPSender should look through its collection of outstanding segments and remove any that have been fully ack'd
+
+	- tick
+		- Time has passed, sender may need to retransmit an oustanding segment
+		
+	- send_empty_message
+		- TCP Sender should generate and send zero-length message w/sequence number set correctly.  
+
+
+
+
+
+
+back() = end() in std::deque
+front() = begin() in std::deque
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
